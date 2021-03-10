@@ -43,8 +43,8 @@ function! IndentSpaces(indent_width = 0, global = v:false) abort
 endfunction
 
 command! -bang -bar -nargs=? IndentTabs
-\     call IndentTabs(<q-args> ?? v:none, <bang>0)
+\     call IndentTabs(<q-args> ? <q-args> : v:none, <bang>0)
 command! -bang -bar -nargs=? IndentSpaces
-\     call IndentSpaces(<q-args> ?? v:none, <bang>0)
+\     call IndentSpaces(<q-args> ? <q-args> : v:none, <bang>0)
 command! -bang -bar -nargs=? TIndent IndentTabs<bang>   <args>
 command! -bang -bar -nargs=? SIndent IndentSpaces<bang> <args>
