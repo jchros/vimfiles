@@ -170,7 +170,7 @@ augroup END
 
 let g:hybrid_reduced_contrast = 1
 
-colorscheme yami
+colorscheme cosme
 
 " Airline related {{{2
 let g:airline_theme = 'soda'
