@@ -1,4 +1,5 @@
 let mapleader      = ' '   " 1 space
+let maplocalleader = "\t"
 
 " cmus {{{1
 " Playpause
