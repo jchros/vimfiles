@@ -4,7 +4,7 @@ function! GlobalIndentTabs(indent_width = v:none) abort
   endif
 
   let &shiftwidth = a:indent_width
-  set noexpandtab
+  set noexpandtab softtabstop=0
 endfunction
 
 function! LocalIndentTabs(indent_width = v:none) abort
@@ -13,7 +13,7 @@ function! LocalIndentTabs(indent_width = v:none) abort
   endif
 
   let &l:shiftwidth = a:indent_width
-  setlocal noexpandtab
+  setlocal noexpandtab softtabstop=0
 endfunction
 
 function! IndentTabs(indent_width = v:none, global = v:false) abort
@@ -26,12 +26,12 @@ endfunction
 
 function! GlobalIndentSpaces(indent_width = 0) abort
   let &shiftwidth = a:indent_width
-  set expandtab
+  set expandtab softtabstop=0
 endfunction
 
 function! LocalIndentSpaces(indent_width = 0) abort
   let &shiftwidth = a:indent_width
-  setlocal expandtab
+  setlocal expandtab softtabstop=0
 endfunction
 
 function! IndentSpaces(indent_width = 0, global = v:false) abort
