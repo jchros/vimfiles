@@ -59,11 +59,6 @@ tnoremap <silent> <C-W>ZQ <C-W>:qall<cr>
 " Don't insert non-breaking spaces in text
 noremap!        <Space>
 
-" Automatically close braces, brackets, parentheses
-inoremap {<CR> {<CR>}<C-O>O
-inoremap [<CR> [<CR>]<C-O>O
-inoremap (<CR> (<CR>)<C-O>O
-
 nnoremap ² <C-]>
 
 " Quickly insert a blank line {{{1
