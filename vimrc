@@ -132,6 +132,9 @@ endif
 " Focus in one section of text by removing the rest
 Plug 'chrisbra/NrrwRgn'
 
+" Automatically close brackets on newlines
+Plug 'rstacruz/vim-closer'
+
 call plug#end()
 
 " THEMING {{{1
