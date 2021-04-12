@@ -135,6 +135,9 @@ Plug 'chrisbra/NrrwRgn'
 " Automatically close brackets on newlines
 Plug 'rstacruz/vim-closer'
 
+" Preview substitution patterns
+Plug 'markonm/traces.vim'
+
 call plug#end()
 
 " THEMING {{{1
