@@ -235,6 +235,11 @@ se cursorline             " Highlight the cursor's line
 
 se encoding=utf8
 
+se fillchars=             " Option used to customise separators
+se fillchars+=vert:│      " Change vertical split separator;
+                          " use box-drawing characters instead of │ vs |
+                          " a vertical bar, see the lines here →  │ vs |
+
 if has('folding')         " Creates folds using markers
     se foldmethod=marker  " (i.e: those triple braces sprinkled all over
 endif                     " this file)
