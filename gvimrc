@@ -15,7 +15,7 @@ nnoremap <leader>F :se gfn?<cr>
 nnoremap <expr> <leader>f ':<c-u>set guifont=' . g:preferred_font . ':h' .
 \(v:count ? v:count . '<cr>' : '')
 
-let g:preferred_font="Rec\\ Mono\\ Duotone"
+let g:preferred_font="Rec\\ Mono\\ Linear"
 let s:default_font_size=14
 execute 'se gfn=' . g:preferred_font . ':h' . s:default_font_size
 
