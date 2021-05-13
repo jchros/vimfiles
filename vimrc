@@ -90,7 +90,7 @@ Plug 'tpope/vim-repeat'
 Plug 'vim/killersheep'
 
 " Allows you to swap two text objects
-Plug 'kloKenPhantasie/vim-exchange', {
+Plug 'jchros/vim-exchange', {
 \   'branch' : 'persist-hl-status-on-cs-change'
 \}
 
