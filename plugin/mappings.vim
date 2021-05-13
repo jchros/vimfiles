@@ -1,11 +1,6 @@
 let mapleader      = ' '   " 1 space
 let maplocalleader = "\t"
 
-" cmus {{{1
-" Playpause
-nnoremap <silent> <leader>c :call system("cmus-remote -u")<cr>
-" }}}1
-
 " A Magit-inspired mapping; useful for making commits
 nnoremap <C-C><C-C> :xit<cr>
 
