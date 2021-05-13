@@ -344,3 +344,6 @@ let g:vim_parinfer_globs = [
 
 " Browse man pages without exiting Vim (see :help :Man)
 runtime ftplugin/man.vim
+
+" Allow modifying and writing to a protected file
+command -bang Writeable set modifiable noreadonly
