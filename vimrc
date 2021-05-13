@@ -47,16 +47,9 @@ Plug 'tpope/vim-fugitive'
 " Hub ↓
 Plug 'tpope/vim-rhubarb'
 " Color schemes {{{2
-Plug 'vimoxide/vim-cinnabar'
-Plug 'cormacrelf/vim-colors-github'
-Plug 'whatyouhide/vim-gotham'
 Plug 'w0ng/vim-hybrid'
-Plug 'NLKNguyen/papercolor-theme'
-
-" Monochrome
-Plug 'beikome/cosme.vim'
-Plug 'axvr/photon.vim'
-Plug 'danishprakash/vim-yami'
+Plug 'srcery-colors/srcery-vim'
+Plug 'habamax/vim-freyeday'
 
 " Custom text objects {{{2
 
@@ -176,7 +169,6 @@ augroup END
 
 let g:hybrid_reduced_contrast = 1
 
-colorscheme cosme
 
 " Airline related {{{2
 let g:airline_theme = 'soda'
@@ -190,6 +182,7 @@ let g:airline_theme = 'soda'
 "
 " See :help airline-whitespace
 let g:airline#extensions#whitespace#mixed_indent_algo = 2
+colorscheme srcery
 
 " STORE VIMINFO INTO VIMFILES DIRECTORY {{{1
 let s:viminfo_folder  = kkp#VimFolder() . 'viminfo'
