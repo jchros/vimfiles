@@ -1,6 +1,3 @@
-let mapleader      = ' '   " 1 space
-let maplocalleader = "\t"
-
 " A Magit-inspired mapping; useful for making commits
 nnoremap <C-C><C-C> :xit<cr>
 
