@@ -342,6 +342,6 @@ let g:vim_parinfer_globs = [
 runtime ftplugin/man.vim
 
 " Allow modifying and writing to a protected file
-command -bang Writeable set modifiable noreadonly
+command -bar -bang Writeable set modifiable noreadonly
 
 command -bar -nargs=? Tex Texplore <arg>
