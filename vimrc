@@ -327,16 +327,7 @@ augroup END  " }}}2
 
 let g:lisp_rainbow = v:true
 
-let g:vim_parinfer_globs = [
-\   '*.clj', '*.cljs', '*.cljc', '*.edn',
-\   '*.el',
-\   '*.lisp', '*.cl',
-\   '*.rkt',
-\   '*.ss',
-\   '*.lfe',
-\   '*.fnl', '*.fennel',
-\   '*.carp'
-\]
+autocmd VimEnter * call insert(g:vim_parinfer_globs, '.*cl')
 
 " Browse man pages without exiting Vim (see :help :Man)
 runtime ftplugin/man.vim
