@@ -18,6 +18,8 @@ nnoremap <silent> <leader>W :<C-U>Gw<cr>
 
 " Open Fugitive's summary window
 nnoremap <leader>g :<C-U>G<cr>
+" Same, but vertically
+nnoremap <leader>G :<C-U>vert G<cr>
 
 " Navigate through windows {{{1
 nnoremap <leader>o <C-W>o
