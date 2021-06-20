@@ -67,9 +67,6 @@ Plug 'sgur/vim-textobj-parameter'
 
 " }}}2
 
-" Displays useful information in the statusline in a pretty way
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 
 " Displays the relevant color for an RGB hex code or CSS color name
 Plug 'ap/vim-css-color'
@@ -169,19 +166,6 @@ augroup END
 
 let g:hybrid_reduced_contrast = 1
 
-
-" Airline related {{{2
-let g:airline_theme = 'soda'
-
-" Don't display "mixed indent" warning on lines featuring spaces after
-" tabs, only for lines featuring tabs between or after spaces
-" e.g.: (tabs are represented with "T"s, spaces with "S"s)
-" NO WARNING: T-------T-------SSSS
-" WARNING:    SSSSSSSST-------
-" WARNING:    T-------SSSST---SSSS
-"
-" See :help airline-whitespace
-let g:airline#extensions#whitespace#mixed_indent_algo = 2
 colorscheme srcery
 
 " STORE VIMINFO INTO VIMFILES DIRECTORY {{{1
@@ -286,9 +270,6 @@ endif
 if has('cmdline_info')
     se showcmd
 endif
-
-se noshowmode             " Don't show the mode in the last line;
-                          " Airline already does
 
 se noswapfile             " Disable swap files, use a VCS instead
 
