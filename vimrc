@@ -44,6 +44,9 @@ Plug 'tpope/vim-rhubarb'
 Plug 'w0ng/vim-hybrid'
 Plug 'srcery-colors/srcery-vim'
 Plug 'habamax/vim-freyeday'
+Plug 'beikome/cosme.vim'
+Plug 'axvr/photon.vim'
+Plug 'Softmotions/vim-dark-frost-theme'
 
 " Custom text objects {{{2
 
@@ -130,7 +133,7 @@ call plug#end()
 
 let g:hybrid_reduced_contrast = 1
 
-colorscheme srcery
+colorscheme darkfrost
 
 " STORE VIMINFO INTO VIMFILES DIRECTORY {{{1
 let s:viminfo_folder  = kkp#VimFolder() . 'viminfo'
