@@ -21,12 +21,6 @@ if !has('syntax')
     finish
 endif
 
-" I don't know if this script will work with NeoVim
-if has('nvim')
-    echoerr "You are using NeoVim, not Vim."
-    finish
-endif
-
 " VIM-PLUG {{{1
 
 " Install vim-plug if you don't have it yet
