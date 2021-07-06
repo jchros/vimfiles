@@ -149,10 +149,6 @@ se softtabstop=-1         " <Tab> should insert 'sw' spaces
 let mapleader      = ' '  " 1 space
 let maplocalleader = "\t"
 
-" Highlight some columns
-" Helps me to avoid writing long lines
-se colorcolumn=73,89,90,91,92,93,94,95,96,97,98,99
-
 se autoindent
 
 se autoread               " Update the file automatically when changed
