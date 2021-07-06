@@ -281,3 +281,8 @@ runtime ftplugin/man.vim
 command -bar -bang Writeable set modifiable noreadonly
 
 command -bar -nargs=? Tex Texplore <arg>
+
+augroup DisableList
+    au!
+    au FileType man setlocal nolist
+augroup END
