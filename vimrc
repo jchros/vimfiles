@@ -281,6 +281,9 @@ command -bar -bang Writeable set modifiable noreadonly
 
 command -bar -nargs=? Tex Texplore <arg>
 
+" Enable folding of manpage sections
+let g:ft_man_folding_enable = 1
+
 augroup DisableList
     au!
     au FileType man setlocal nolist
