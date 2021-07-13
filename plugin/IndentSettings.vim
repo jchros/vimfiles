@@ -3,8 +3,7 @@ function! GlobalIndentTabs(indent_width = v:none) abort
     let &tabstop = a:indent_width
   endif
 
-  let &shiftwidth = a:indent_width
-  set noexpandtab softtabstop=0
+  set noexpandtab softtabstop=0 shiftwidth=0
 endfunction
 
 function! LocalIndentTabs(indent_width = v:none) abort
@@ -12,8 +11,7 @@ function! LocalIndentTabs(indent_width = v:none) abort
     let &l:tabstop = a:indent_width
   endif
 
-  let &l:shiftwidth = a:indent_width
-  setlocal noexpandtab softtabstop=0
+  setlocal noexpandtab softtabstop=0 shiftwidth=0
 endfunction
 
 function! IndentTabs(indent_width = v:none, global = v:false) abort
