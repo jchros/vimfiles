@@ -62,6 +62,14 @@ Plug 'bps/vim-textobj-python'
 " List element (or function argument) text object; language agnostic
 Plug 'sgur/vim-textobj-parameter'
 
+" For NeoVim {{{2
+
+" Auto-completion backend
+Plug 'hrsh7th/nvim-compe'
+
+" TabNine completions
+Plug 'tzachar/compe-tabnine', { 'do': './install.sh' }
+
 " }}}2
 
 
