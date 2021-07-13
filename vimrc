@@ -125,12 +125,12 @@ Plug 'rstacruz/vim-closer'
 " Preview substitution patterns
 Plug 'markonm/traces.vim'
 
+" Caps lock for Vim
+Plug 'tpope/vim-capslock'
+
 call plug#end()
 
 " THEMING {{{1
-
-
-
 let g:hybrid_reduced_contrast = 1
 
 colorscheme darkfrost
