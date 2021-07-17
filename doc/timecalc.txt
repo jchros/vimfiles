@@ -1,0 +1,41 @@
+*timecalc.txt*
+
+SumDurations({durations})                             *SumDurations()*
+		Return a |String| containing the sum of a |List| of
+		{durations}.
+
+		A duration is a |String| which follows this pattern: >
+			[HH:]MM:SS
+<		in which:
+		HH represents a number of hours;
+		MM represents a number of minutes (which must be less than 60
+		   and written with two digits if a number of hours is given);
+		SS represents a number of seconds (which must be less than 60
+		   and written with two digits).
+
+		You can also write a negative duration by prefixing it with a
+		minus ('-') character, in which case the duration is
+		subtracted from the total.
+
+		Any argument which is not a valid duration is converted into a
+		|Number| of seconds.
+
+		Example: >
+			SumDurations([97, "1:00:21", "27:18", "-17:14"])
+<		returns "1:12:01".
+
+SumDurationRange([{start} [, {end}]])                    *SumDurationRange()*
+		Return a |String| containing the sum of the durations within a
+		range of lines.
+
+		If no arguments are given, the range of lines over which the
+		durations are taken is either the range given when calling the
+		function through |:call|, or the current line.  Otherwise, the
+		range of lines spans from the {start} to the {end} (the
+		default value of {end} is {start} when not given).
+
+		If the range only spans one line, all durations within the
+		line is added up.  Otherwise, only the first duration in each
+		line is added up.
+
+vim:tw=78:ts=8:noet:ft=help:norl:

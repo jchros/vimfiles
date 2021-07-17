@@ -16,4 +16,6 @@ viminfo
 # Ignore spellfile
 spell
 # I use vim help files for note-taking… don't judge me
-doc
+doc/*
+# But include this actual documentation I wrote {{{1
+!doc/timecalc.txt
