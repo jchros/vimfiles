@@ -68,7 +68,7 @@ func SumDurationRange(...) abort range
 	return SumDurations(durations)
 endfunc
 
-command -bang -range
+command -bar -range
 \	SumDurations
 \		echo SumDurationRange(<line1>, <line2>)
 
