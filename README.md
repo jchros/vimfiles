@@ -9,6 +9,20 @@ However, you should probably not clone this repository in your machine;
 it's very rewarding to build your Vim configuration yourself! My vimrc
 does stuff you may not want to do (e.g. automatically install vim-plug).
 
+## Micro-plugins
+
+Here are some plugins I wrote that aren't big enough to deserve their
+own GitHub repositories:
+
+- [`timecalc.vim`](plugin/timecalc.vim): two functions and an Ex
+  command for calculating the sum of a list of durations; see [the
+  documentation](doc/timecalc.txt).
+- [`IndentSettings.vim`](plugin/IndentSettings.vim): Ex commands for
+  quickly change the values of `'expandtab'`, `'tabstop'`,
+  `'softtabstop'`, and `'shiftwidth'`.
+
+These are also licensed under the [0BSD license](LICENSE).
+
 ## Cool mappings for AZERTY keyboards
 
 As a user of an AZERTY keyboard, I've added a few mappings taking
