@@ -289,6 +289,9 @@ command -bar -bang Writeable set modifiable noreadonly
 
 command -bar -nargs=? Tex Texplore <arg>
 
+" Digraph for inserting narrow non-breaking spaces
+digraph NN 8239
+
 " Enable folding of manpage sections
 let g:ft_man_folding_enable = 1
 
