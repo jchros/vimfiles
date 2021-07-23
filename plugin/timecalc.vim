@@ -21,7 +21,7 @@ func SumDurations(durations) abort
 	for duration in a:durations
 		if type(duration) == type('')
 			" Parse duration
-			let matches = duration->matchlist(s:alt_pat)
+			let matches = matchlist(duration, s:alt_pat)
 			if !empty(matches)
 				let [sign, h, m, s] = matches[1 : 4]
 				if empty(m)
@@ -45,8 +45,8 @@ func SumDurationRange(...) abort range
 		\   . 'SumDurationRange, got ' . a:0 . '.'
 	endif
 
-	let first = a:000->get(0, a:firstline)
-	let last = a:000->get(1, a:000->get(0, a:lastline))
+	let first = get(a:000, 0, a:firstline)
+	let last = get(a:000, 1, get(a:000, 0, a:lastline))
 
 	let lines = getline(first, last)
 	if len(lines) == 1
@@ -58,7 +58,7 @@ func SumDurationRange(...) abort range
 		\	'\=add(durations, submatch(0))',
 		\	'g')
 	else
-		let durations = lines->map('v:val->matchstr(s:pat)')
+		let durations = map(lines, 'matchstr(v:val, s:pat)')
 	endif
 
 	if empty(durations)
