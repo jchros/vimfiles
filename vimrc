@@ -143,6 +143,9 @@ Plug 'markonm/traces.vim'
 " Caps lock for Vim
 Plug 'tpope/vim-capslock'
 
+" Convenient commands for UNIX
+Plug 'tpope/vim-eunuch'
+
 call plug#end()
 
 " THEMING {{{1
