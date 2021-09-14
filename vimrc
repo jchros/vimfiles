@@ -40,14 +40,6 @@ Plug 'tpope/vim-fugitive'
 " Git ↑
 " Hub ↓
 Plug 'tpope/vim-rhubarb'
-" Color schemes {{{2
-Plug 'w0ng/vim-hybrid'
-Plug 'srcery-colors/srcery-vim'
-Plug 'habamax/vim-freyeday'
-Plug 'beikome/cosme.vim'
-Plug 'axvr/photon.vim'
-Plug 'Softmotions/vim-dark-frost-theme'
-
 " Custom text objects {{{2
 
 " Indent objects; useful for Python
@@ -124,9 +116,6 @@ Plug 'tpope/vim-abolish'
 " Automagically balances parentheses in Lisp files
 Plug 'bhurlow/vim-parinfer'
 
-" Templating plugin for the creation of Vim color schemes
-Plug 'lifepillar/vim-colortemplate'
-
 if has('osxdarwin')
     Plug '~/.vim/plugged/iTunes-current-track'
 endif
@@ -146,12 +135,15 @@ Plug 'tpope/vim-capslock'
 " Convenient commands for UNIX
 Plug 'tpope/vim-eunuch'
 
+" A color scheme
+Plug 'srcery-colors/srcery-vim'
+
 call plug#end()
 
 " THEMING {{{1
 let g:hybrid_reduced_contrast = 1
 
-colorscheme darkfrost
+colorscheme srcery
 
 " STORE VIMINFO INTO VIMFILES DIRECTORY {{{1
 let s:viminfo_folder  = kkp#VimFolder() . 'viminfo'
