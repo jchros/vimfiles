@@ -299,3 +299,8 @@ augroup DisableList
     au!
     au FileType man setlocal nolist
 augroup END
+
+augroup EnableVimCloserOnAllBuffers
+    au!
+    au FileType * let b:closer = 1
+augroup END
