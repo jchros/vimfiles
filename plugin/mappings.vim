@@ -36,8 +36,8 @@ noremap       gr      gT
 tnoremap <C-W>gr <C-W>gT
 
 " Quickly close tabs
-noremap  <silent> <leader>x      :tabclose<cr>
-tnoremap <silent> <C-W>x    <C-W>:tabclose<cr>
+ noremap <silent>      <leader>x      :tabclose<cr>
+tnoremap <silent> <C-W><leader>x <C-W>:tabclose<cr>
 " }}}1
 
 " Remap ZQ to quit all
