@@ -40,9 +40,8 @@ nnoremap <leader>g :<C-U>G<cr>
 " Same, but vertically
 nnoremap <leader>G :<C-U>vert G<cr>
 
-" Navigate through windows {{{1
+" Remove other windows of current tab
 nnoremap <leader>o <C-W>o
-nnoremap <leader>O <C-W>c
 
 " Quick buffer navigation {{{1
 " Read https://stackoverflow.com/a/24903110
