@@ -6,8 +6,6 @@ nnoremap <silent> <leader>l :<C-U>nohlsearch<cr>
 
 " Quickly edit your .vimrc
 nnoremap <silent> <leader>v :<C-U>tabedit $MYVIMRC<cr>
-" Quickly edit your gvimrc
-nnoremap <silent> <leader>V :<C-U>tabedit $MYGVIMRC<cr>
 
 " Save without staging changes
 nnoremap <silent> <leader>w :<C-U>w<cr>
