@@ -72,6 +72,8 @@ Plug 'tzachar/compe-tabnine', { 'do': './install.sh' }
 
 " }}}2
 
+" Convenient Vim wrappers for Unix commands
+Plug 'tpope/vim-eunuch'
 
 " Displays the relevant color for an RGB hex code or CSS color name
 Plug 'ap/vim-css-color'
