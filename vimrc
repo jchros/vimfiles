@@ -306,3 +306,6 @@ augroup EnableVimCloserOnAllBuffers
     au!
     au FileType * let b:closer = 1
 augroup END
+
+" Use vim-surround-like mappings
+runtime macros/sandwich/keymap/surround.vim
