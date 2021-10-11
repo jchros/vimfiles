@@ -63,6 +63,9 @@ call s:Map('ZQ', ':qall<cr>', 'silent')
 " (since we'll set the conf option,
 " a confirmation prompt will be displayed)
 
+" Close all other tabs
+call s:Map('zq', ':tabonly<cr>')
+
 " Don't insert non-breaking spaces in text
 noremap!        <Space>
 
