@@ -79,7 +79,7 @@ Plug 'tpope/vim-eunuch'
 Plug 'ap/vim-css-color'
 
 " Keybindings for manipulating parentheses, braces, HTML/XML tags, etc.
-Plug 'tpope/vim-surround'
+Plug 'machakann/vim-sandwich'
 
 " Aligns text using user defined patterns
 Plug 'godlygeek/tabular'
