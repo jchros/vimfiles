@@ -1,3 +1,26 @@
+" Define a mapping that will be available from normal mode
+" as well as from Vim's terminal mode — but not from NeoVim's
+function s:Map(lhs, rhs, ...)
+	" Parse options
+        let opts = a:000
+	let silent = index(opts, "silent") > 0
+
+	" Form command
+	let cmd = 'map'
+	if silent
+		let cmd .= ' <silent>'
+	endif
+
+	" Define mapping for normal mode
+	execute 'n'.cmd a:lhs a:rhs
+
+	" Define mapping for Vim's terminal mode
+	if exists('termwinkey')
+		let twk = len(&termwinkey) ? &termwinkey : '<C-W>'
+		execute 't'.cmd twk.a:lhs twk.a:rhs
+	endif
+endfunction
+
 " A Magit-inspired mapping; useful for making commits
 nnoremap <C-C><C-C> :xit<cr>
 
@@ -23,26 +46,21 @@ nnoremap <leader>O <C-W>c
 
 " Quick buffer navigation {{{1
 " Read https://stackoverflow.com/a/24903110
-nnoremap      gb      :ls<cr>:b
-tnoremap <C-W>gb <C-W>:ls<cr>:b
+call s:Map('gb', ':ls<cr>:b')
 
 " Open existing buffer in new tab
-nnoremap      gB      :ls<cr>:tab sbuffer<Space>
-tnoremap <C-W>gB <C-W>:ls<cr>:tab sbuffer<Space>
+call s:Map('gB', ':ls<cr>:tab suffer<Space>')
 
 " Quick tab navigation {{{1
 " Make it easier to switch tabs
-noremap       gr      gT
-tnoremap <C-W>gr <C-W>gT
+call s:Map('gr', 'gT')
 
 " Quickly close tabs
- noremap <silent>      <leader>x      :tabclose<cr>
-tnoremap <silent> <C-W><leader>x <C-W>:tabclose<cr>
+call s:Map('<leader>x', ':tabclose<cr>', 'silent')
 " }}}1
 
 " Remap ZQ to quit all
-noremap  <silent>      ZQ      :qall<cr>
-tnoremap <silent> <C-W>ZQ <C-W>:qall<cr>
+call s:Map('ZQ', ':qall<cr>', 'silent')
 " (since we'll set the conf option,
 " a confirmation prompt will be displayed)
 
