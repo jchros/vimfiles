@@ -4,8 +4,6 @@ nnoremap <C-C><C-C> :xit<cr>
 " Clear search highlighting
 nnoremap <silent> <leader>l :<C-U>nohlsearch<cr>
 
-nnoremap <silent> <leader>L :<C-U>AirlineRefresh<cr>
-
 " Quickly edit your .vimrc
 nnoremap <silent> <leader>v :<C-U>tabedit $MYVIMRC<cr>
 " Quickly edit your gvimrc
