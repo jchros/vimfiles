@@ -117,3 +117,14 @@ nmap gx  <Plug>(Exchange)
 xmap  X  <Plug>(Exchange)
 nmap gxc <Plug>(ExchangeClear)
 nmap gxx <Plug>(ExchangeLine)
+
+" Some vim-sandwich-related text objects {{{1
+xmap is <Plug>(textobj-sandwich-query-i)
+xmap as <Plug>(textobj-sandwich-query-a)
+omap is <Plug>(textobj-sandwich-query-i)
+omap as <Plug>(textobj-sandwich-query-a)
+
+xmap iss <Plug>(textobj-sandwich-auto-i)
+xmap ass <Plug>(textobj-sandwich-auto-a)
+omap iss <Plug>(textobj-sandwich-auto-i)
+omap ass <Plug>(textobj-sandwich-auto-a)
