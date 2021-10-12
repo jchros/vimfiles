@@ -64,11 +64,13 @@ Plug 'sgur/vim-textobj-parameter'
 
 " For NeoVim {{{2
 
+if executable('nvim')
 " Auto-completion backend
 Plug 'hrsh7th/nvim-compe'
 
 " TabNine completions
 Plug 'tzachar/compe-tabnine', { 'do': './install.sh' }
+endif
 
 " }}}2
 
