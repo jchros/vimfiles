@@ -49,6 +49,10 @@ call s:Map('gb', ':ls<cr>:b')
 
 " Open existing buffer in new tab
 call s:Map('gB', ':ls<cr>:tab suffer<Space>')
+" in a vertical split
+call s:Map('<leader>b', ':ls<cr>:vert sbuffer<Space>')
+"in a horizontal split
+call s:Map('<leader>B', ':ls<cr>:sbuffer<Space>')
 
 " Quick tab navigation {{{1
 " Make it easier to switch tabs
