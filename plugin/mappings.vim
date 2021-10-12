@@ -48,7 +48,7 @@ nnoremap <leader>o <C-W>o
 call s:Map('gb', ':ls<cr>:b')
 
 " Open existing buffer in new tab
-call s:Map('gB', ':ls<cr>:tab suffer<Space>')
+call s:Map('gB', ':ls<cr>:tab sbuffer<Space>')
 " in a vertical split
 call s:Map('<leader>b', ':ls<cr>:vert sbuffer<Space>')
 "in a horizontal split
