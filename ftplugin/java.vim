@@ -19,13 +19,7 @@ if empty(b:equinox_launcher_path)
 endif
 
 let b:config_folder = g:jdtls_path . '/config_'
-if has('win32')
-	let b:config_folder .= 'win'
-elseif has('mac')
-	let b:config_folder .= 'mac'
-else
-	let b:config_folder .= 'linux'
-endif
+let b:config_folder .= has('win32') ? 'win' : has('mac') ? 'mac' : 'linux'
 
 let b:data_dir = $XDG_DATA_DIR
 if empty(b:data_dir)
