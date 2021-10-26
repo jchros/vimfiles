@@ -1,12 +1,15 @@
 setlocal cc=80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100
 
 " The remainder of this file sets up the Eclipse JDT language server
-if !has('nvim')
+if !has('nvim') || (exists('g:jdtls_path') && empty('g:jdtls_path'))
 	finish
 endif
 
 if !exists('g:jdtls_path')
-	echomsg 'To enable the Eclipse JDT language server, set the g:jdtls_path variable'
+	if !exists('g:warned_about_jdtls_path')
+		echomsg 'To enable the Eclipse JDT language server, set the g:jdtls_path variable'
+		let g:warned_about_jdtls_path = v:true
+	endif
 	finish
 endif
 
