@@ -70,6 +70,9 @@ Plug 'hrsh7th/nvim-compe'
 
 " TabNine completions
 Plug 'tzachar/compe-tabnine', { 'do': './install.sh' }
+
+" Client for Eclipse JDT's LSP
+Plug 'mfussenegger/nvim-jdtls'
 endif
 
 " }}}2
