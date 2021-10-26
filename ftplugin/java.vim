@@ -30,6 +30,7 @@ endif
 let b:data_dir = $XDG_DATA_DIR
 if empty(b:data_dir)
     let b:data_dir = has('win32') ? '~/AppData/Local/' : '~/.local/share/'
+    let b:data_dir = expand(b:data_dir, ':p')
 endif
 
 let b:workspace_data_dir = b:data_dir . 'jdtls/' . fnamemodify(FugitiveFind(":(top)"), ":t")
