@@ -17,7 +17,7 @@ endfun
 
 fun s:user_wants_to(prompt) abort
     let [l:yes, l:no] = [1, 2]
-    let l:res = a:prompt->confirm("&Yes\n&No")
+    let l:res = confirm(a:prompt, "&Yes\n&No")
     return l:res == l:yes
 endfun
 " }}}1
