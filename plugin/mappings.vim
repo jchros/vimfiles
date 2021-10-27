@@ -25,15 +25,15 @@ endfunction
 nnoremap <C-C><C-C> <Cmd>xit<cr>
 
 " Clear search highlighting
-nnoremap <silent> <leader>l <Cmd>nohlsearch<cr>
+nnoremap <leader>l <Cmd>nohlsearch<cr>
 
 " Quickly edit your .vimrc
-nnoremap <silent> <leader>v <Cmd>tabedit $MYVIMRC<cr>
+nnoremap <leader>v <Cmd>tabedit $MYVIMRC<cr>
 
 " Save without staging changes
-nnoremap <silent> <leader>w <Cmd>w<cr>
+nnoremap <leader>w <Cmd>w<cr>
 " Save and stage changes
-nnoremap <silent> <leader>W <Cmd>Gw<cr>
+nnoremap <leader>W <Cmd>Gw<cr>
 
 " Open Fugitive's summary window
 nnoremap <leader>g <Cmd>G<cr>
@@ -59,11 +59,11 @@ call s:Map('<leader>B', ':ls<cr>:sbuffer<Space>')
 call s:Map('gr', 'gT')
 
 " Quickly close tabs
-call s:Map('<leader>x', '<Cmd>tabclose<cr>', 'silent')
+call s:Map('<leader>x', '<Cmd>tabclose<cr>')
 " }}}1
 
 " Remap ZQ to quit all
-call s:Map('ZQ', '<Cmd>qall<cr>', 'silent')
+call s:Map('ZQ', '<Cmd>qall<cr>')
 " (since we'll set the conf option,
 " a confirmation prompt will be displayed)
 

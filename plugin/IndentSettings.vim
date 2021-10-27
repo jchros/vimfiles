@@ -47,9 +47,9 @@ command! -bang -bar -nargs=? IndentSpaces
 command! -bang -bar -nargs=? TIndent IndentTabs<bang>   <args>
 command! -bang -bar -nargs=? SIndent IndentSpaces<bang> <args>
 
-nnoremap <silent> <Plug>(indent-space)
+nnoremap <Plug>(indent-space)
 \      <Cmd>call LocalIndentSpaces(v:count)<CR>
-nnoremap <silent> <Plug>(indent-tab)
+nnoremap <Plug>(indent-tab)
 \      <Cmd>call LocalIndentTabs(v:count)<CR>
 
 nmap ><Space> <Plug>(indent-space)
