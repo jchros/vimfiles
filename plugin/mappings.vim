@@ -22,23 +22,23 @@ function s:Map(lhs, rhs, ...)
 endfunction
 
 " A Magit-inspired mapping; useful for making commits
-nnoremap <C-C><C-C> :xit<cr>
+nnoremap <C-C><C-C> <Cmd>xit<cr>
 
 " Clear search highlighting
-nnoremap <silent> <leader>l :<C-U>nohlsearch<cr>
+nnoremap <silent> <leader>l <Cmd>nohlsearch<cr>
 
 " Quickly edit your .vimrc
-nnoremap <silent> <leader>v :<C-U>tabedit $MYVIMRC<cr>
+nnoremap <silent> <leader>v <Cmd>tabedit $MYVIMRC<cr>
 
 " Save without staging changes
-nnoremap <silent> <leader>w :<C-U>w<cr>
+nnoremap <silent> <leader>w <Cmd>w<cr>
 " Save and stage changes
-nnoremap <silent> <leader>W :<C-U>Gw<cr>
+nnoremap <silent> <leader>W <Cmd>Gw<cr>
 
 " Open Fugitive's summary window
-nnoremap <leader>g :<C-U>G<cr>
+nnoremap <leader>g <Cmd>G<cr>
 " Same, but vertically
-nnoremap <leader>G :<C-U>vert G<cr>
+nnoremap <leader>G <Cmd>vert G<cr>
 
 " Remove other windows of current tab
 nnoremap <leader>o <C-W>o
@@ -59,16 +59,16 @@ call s:Map('<leader>B', ':ls<cr>:sbuffer<Space>')
 call s:Map('gr', 'gT')
 
 " Quickly close tabs
-call s:Map('<leader>x', ':tabclose<cr>', 'silent')
+call s:Map('<leader>x', '<Cmd>tabclose<cr>', 'silent')
 " }}}1
 
 " Remap ZQ to quit all
-call s:Map('ZQ', ':qall<cr>', 'silent')
+call s:Map('ZQ', '<Cmd>qall<cr>', 'silent')
 " (since we'll set the conf option,
 " a confirmation prompt will be displayed)
 
 " Close all other tabs
-call s:Map('zq', ':tabonly<cr>')
+call s:Map('zq', '<Cmd>tabonly<cr>')
 
 " Don't insert non-breaking spaces in text
 noremap!        <Space>

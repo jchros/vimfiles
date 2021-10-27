@@ -4,8 +4,8 @@ if executable('cmus') && executable('cmus-remote')
 	else
 		command -nargs=* -bar Cmus <mods> ter ++close <args> cmus
 	endif
-	nnoremap <silent> <leader>c :call system('cmus-remote -u')<cr>
-	nnoremap <silent> <leader>C :call system('cmus-remote', 'toggle continue')<cr>
-	tnoremap <silent> <C-W><leader>c :call system('cmus-remote -u')<cr>
-	tnoremap <silent> <C-W><leader>C :call system('cmus-remote', 'toggle continue')<cr>
+	nnoremap <silent> <leader>c <Cmd>call system('cmus-remote -u')<cr>
+	nnoremap <silent> <leader>C <Cmd>call system('cmus-remote', 'toggle continue')<cr>
+	tnoremap <silent> <C-W><leader>c <Cmd>call system('cmus-remote -u')<cr>
+	tnoremap <silent> <C-W><leader>C <Cmd>call system('cmus-remote', 'toggle continue')<cr>
 endif
