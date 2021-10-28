@@ -47,72 +47,49 @@ Plug 'michaeljsmith/vim-indent-object'
 
 " THE FOLLOWING PLUGINS RELY ON THIS ONE
 Plug 'kana/vim-textobj-user'
-
 " Function and class text objects for Python
 Plug 'bps/vim-textobj-python'
-
 " List element (or function argument) text object; language agnostic
 Plug 'sgur/vim-textobj-parameter'
 
-" For NeoVim {{{2
-
-if executable('nvim')
+if executable('nvim')  " {{{2
 " Auto-completion backend
 Plug 'hrsh7th/nvim-compe'
-
 " TabNine completions
-Plug 'tzachar/compe-tabnine', { 'do': './install.sh' }
-
+Plug 'tzachar/compe-tabnine', #{do: './install.sh'}
 " Client for Eclipse JDT's LSP
 Plug 'mfussenegger/nvim-jdtls'
-endif
-
-" }}}2
+endif " }}}2
 
 " Convenient Vim wrappers for Unix commands
 Plug 'tpope/vim-eunuch'
-
 " Displays the relevant color for an RGB hex code or CSS color name
 Plug 'ap/vim-css-color'
-
 " Keybindings for manipulating parentheses, braces, HTML/XML tags, etc.
 Plug 'machakann/vim-sandwich'
-
 " Aligns text using user defined patterns
 Plug 'godlygeek/tabular'
-
 " Helps you naviagate to any word in the line using 'f' and 't'
 Plug 'unblevable/quick-scope'
-
 " Allows to use the dot command for plugins' custom mappings
 Plug 'tpope/vim-repeat'
 
 " A little video game showing off some of Vim's latest features
 Plug 'vim/killersheep'
-
 " Allows you to swap two text objects
-Plug 'jchros/vim-exchange', {
-\   'branch' : 'persist-hl-status-on-cs-change'
-\}
-
+Plug 'jchros/vim-exchange', #{branch: 'persist-hl-status-on-cs-change'}
 " Allows for smooth scrolling
 Plug 'psliwka/vim-smoothie'
-
 " A plugin to ensure files are well-formatted
 Plug 'editorconfig/editorconfig-vim'
-
 " Emmet completion for HTML/CSS
 Plug 'mattn/emmet-vim'
-
 " Integration of linters in Vim
 Plug 'drgarcia1986/python-compilers.vim'
-
 " A REPL plugin for Common Lisp
-Plug 'vlime/vlime', {'rtp': 'vim/'}
-
+Plug 'vlime/vlime', #{rtp: 'vim/'}
 " Smarter substitutions and easySwitching between letter_casings
 Plug 'tpope/vim-abolish'
-
 " Automagically balances parentheses in Lisp files
 Plug 'bhurlow/vim-parinfer'
 
@@ -122,13 +99,10 @@ endif
 
 " Focus in one section of text by removing the rest
 Plug 'chrisbra/NrrwRgn'
-
 " Automatically close brackets on newlines
 Plug 'rstacruz/vim-closer'
-
 " Preview substitution patterns
 Plug 'markonm/traces.vim'
-
 " Caps lock for Vim
 Plug 'tpope/vim-capslock'
 
@@ -263,17 +237,31 @@ se wildmode+=full         " then each full match
 se nowrap                 " Disable line wrapping
 
 " MISCELLANEOUS {{{1
+"
+" Options for emmet-vim {{{2
+let g:user_emmet_install_global = 0
+autocmd FileType html,css,php,javascript EmmetInstall
 
-packadd! matchit      " Improved % matching
+" augroups {{{2
+augroup DisableList  " {{{3
+    au!
+    au FileType man setlocal nolist
+augroup END
+augroup EnableVimCloserOnAllBuffers  " {{{3
+    au!
+    au FileType * let b:closer = 1
+augroup END
+augroup disableNETRWFoldColumn  " {{{3
+    au!
+    au BufEnter,WinEnter * if &filetype ==? 'netrw' | se foldcolumn=0
+augroup END
+" }}}2
+
+packadd! matchit  " Improved % matching
 
 " Disable EditorConfig in remote files and fugitive,
 " as suggested in the repo's README on GitHub
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
-
-" Options for emmet-vim {{{2
-let g:user_emmet_install_global = 0
-autocmd FileType html,css,php,javascript EmmetInstall
-" }}}2
 
 let g:lisp_rainbow = v:true
 
@@ -292,21 +280,6 @@ digraph NN 8239
 
 " Enable folding of manpage sections
 let g:ft_man_folding_enable = 1
-
-" augroups {{{2
-augroup DisableList  " {{{3
-    au!
-    au FileType man setlocal nolist
-augroup END
-augroup EnableVimCloserOnAllBuffers  " {{{3
-    au!
-    au FileType * let b:closer = 1
-augroup END
-augroup disableNETRWFoldColumn  " {{{3
-    au!
-    au BufEnter,WinEnter * if &filetype ==? 'netrw' | se foldcolumn=0
-augroup END
-" }}}2
 
 " Use vim-surround-like mappings
 runtime macros/sandwich/keymap/surround.vim
