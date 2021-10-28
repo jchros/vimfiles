@@ -75,6 +75,25 @@ noremap!        <Space>
 
 nnoremap ² <C-]>
 
+" <C-A> and <C-X> for alphabetical characters
+" without changing the value of 'nrformats'
+function s:CtrlAVariable(...)
+	let [oldnf, &l:nrformats] = [&nrformats, 'alpha']
+	execute 'normal ' . (a:0 ? 'g' : '') . "\<c-a>"
+	let &l:nrformats = oldnf
+endfunction
+
+function s:CtrlXVariable(...)
+	let [oldnf, &l:nrformats] = [&nrformats, 'alpha']
+	execute 'normal ' . (a:0 ? 'g' : '') . "\<c-x>"
+	let &l:nrformats = oldnf
+endfunction
+
+map <leader>A <Cmd>call <sid>CtrlAVariable()<CR>
+map <leader>X <Cmd>call <sid>CtrlXVariable()<CR>
+vmap <leader>a <Cmd>call <sid>CtrlAVariable(0)<CR>
+vmap <leader>x <Cmd>call <sid>CtrlXVariable(0)<CR>
+
 " Quickly insert a blank line {{{1
 "
 " Add line(s) below the cursor
