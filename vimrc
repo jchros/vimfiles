@@ -278,11 +278,7 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 " Options for emmet-vim {{{2
 let g:user_emmet_install_global = 0
 autocmd FileType html,css,php,javascript EmmetInstall
-
-augroup disableNETRWFoldColumn  " {{{2
-    au!
-    au BufEnter,WinEnter * if &filetype ==? 'netrw' | se foldcolumn=0
-augroup END  " }}}2
+" }}}2
 
 let g:lisp_rainbow = v:true
 
@@ -302,15 +298,20 @@ digraph NN 8239
 " Enable folding of manpage sections
 let g:ft_man_folding_enable = 1
 
-augroup DisableList
+" augroups {{{2
+augroup DisableList  " {{{3
     au!
     au FileType man setlocal nolist
 augroup END
-
-augroup EnableVimCloserOnAllBuffers
+augroup EnableVimCloserOnAllBuffers  " {{{3
     au!
     au FileType * let b:closer = 1
 augroup END
+augroup disableNETRWFoldColumn  " {{{3
+    au!
+    au BufEnter,WinEnter * if &filetype ==? 'netrw' | se foldcolumn=0
+augroup END
+" }}}2
 
 " Use vim-surround-like mappings
 runtime macros/sandwich/keymap/surround.vim
