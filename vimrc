@@ -285,7 +285,7 @@ runtime ftplugin/man.vim
 " Allow modifying and writing to a protected file
 command -bar -bang Writeable set modifiable noreadonly
 
-command -bar -nargs=? Tex Texplore <arg>
+command -bar -nargs=? -complete=dir Tex Texplore <arg>
 
 " Digraph for inserting narrow non-breaking spaces
 digraph NN 8239
