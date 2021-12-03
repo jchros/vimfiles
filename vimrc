@@ -280,6 +280,3 @@ digraph NN 8239
 
 " Enable folding of manpage sections
 let g:ft_man_folding_enable = 1
-
-" Use vim-surround-like mappings
-runtime macros/sandwich/keymap/surround.vim
