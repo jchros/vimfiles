@@ -66,7 +66,7 @@ Plug 'tpope/vim-eunuch'
 " Displays the relevant color for an RGB hex code or CSS color name
 Plug 'ap/vim-css-color'
 " Keybindings for manipulating parentheses, braces, HTML/XML tags, etc.
-Plug 'machakann/vim-sandwich'
+Plug 'tpope/vim-surround'
 " Aligns text using user defined patterns
 Plug 'godlygeek/tabular'
 " Helps you naviagate to any word in the line using 'f' and 't'
