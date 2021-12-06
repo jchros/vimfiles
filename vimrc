@@ -280,3 +280,13 @@ digraph NN 8239
 
 " Enable folding of manpage sections
 let g:ft_man_folding_enable = 1
+
+" The following function is taken from this Stack Overflow answer by
+" romainl: https://stackoverflow.com/a/9464929/13193502
+" It tells you what syntax groups apply to the text under the cursor.
+function! SynStack()
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
