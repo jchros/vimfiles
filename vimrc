@@ -25,7 +25,7 @@ endif
 
 " Install vim-plug if you don't have it yet
 " This will only work on Unix machines (BSD, Linux, etc.)
-if has('unix')
+if has('unix') && !exists('g:NO_INSTALL_PLUG')
     source ~/.vim/scripts/install-vim-plug.vim
 endif
 

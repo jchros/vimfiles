@@ -31,6 +31,10 @@ fun s:try_to_get_vim_plug() abort
     let vim_plug_path = '~/.vim/autoload/plug.vim'
     if get(s:, 'skip_vim_plug_install', v:false)
         " User doesn't want to install vim-plug
+        " We set this variable to stop nagging the user
+        " every time Vim is launched; if this variable is set,
+        " the user already declined to install vim-plug
+        let g:NO_INSTALL_PLUG = 0
         return
     endif
     if kkp#FileExists(vim_plug_path)
