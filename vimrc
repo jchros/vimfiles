@@ -126,12 +126,6 @@ if has('viminfo')
 endif
 
 " OPTIONS {{{1
-" Controversial indentation settings {{{2
-se expandtab              " Prefer spaces over tabs
-se tabstop=8              " Tabs are 8 columns wide
-se shiftwidth=4           " Indent using 4 spaces
-se softtabstop=-1         " <Tab> should insert 'sw' spaces
-" }}}2
 
 let mapleader      = ' '  " 1 space
 let maplocalleader = "\t"
