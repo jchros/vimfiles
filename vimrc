@@ -1,12 +1,6 @@
 " 1,000 thanks to romainl for his "idiomatic vimrc" project.
 " Give it a read: https://github.com/romainl/idiomatic-vimrc#readme
 
-" SCRIPTVERSION {{{1
-if has('scriptversion-3')
-    " Enforce prefixing of Vim variables with 'v:'
-    scriptversion 3
-endif
-
 " GUARDS {{{1
 " This vimrc isn't very useful without the +eval and +syntax features
 
