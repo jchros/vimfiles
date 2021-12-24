@@ -280,3 +280,15 @@ function! SynStack()
 endfunc
 
 let g:traces_abolish_integration = 1
+
+" The following command is taken from Vim's default vimrc (for files
+" which have no VIMRC) and is thus licensed under Vim's license.
+" Convenient command to see the difference between the current buffer and the
+" file it was loaded from, thus the changes you made.
+" Only define it when not defined already.
+" Revert with: ":delcommand DiffOrig".
+if !exists(":DiffOrig")
+  command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
+		  \ | wincmd p | diffthis
+endif
+
