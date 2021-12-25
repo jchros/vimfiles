@@ -34,6 +34,8 @@ Plug 'tpope/vim-fugitive'
 " Git ↑
 " Hub ↓
 Plug 'tpope/vim-rhubarb'
+" Show changes/additions/deletions on the sign column (for git, etc.)
+Plug 'mhinz/vim-signify'
 " Custom text objects {{{2
 
 " Indent objects; useful for Python
