@@ -101,7 +101,8 @@ Plug 'rstacruz/vim-closer'
 Plug 'markonm/traces.vim'
 " Caps lock for Vim
 Plug 'tpope/vim-capslock'
-
+" I mostly use this plugin for brace expansion
+Plug 'Olical/vim-expand'
 " Convenient commands for UNIX
 Plug 'tpope/vim-eunuch'
 " Automatically update HTML tags
