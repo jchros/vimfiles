@@ -104,6 +104,8 @@ Plug 'tpope/vim-capslock'
 
 " Convenient commands for UNIX
 Plug 'tpope/vim-eunuch'
+" Automatically update HTML tags
+Plug 'AndrewRadev/tagalong.vim'
 
 " A color scheme
 Plug 'srcery-colors/srcery-vim'
