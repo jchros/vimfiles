@@ -239,7 +239,7 @@ augroup DisableList  " {{{3
 augroup END
 augroup EnableVimCloserOnAllBuffers  " {{{3
     au!
-    au FileType * let b:closer = 1
+    au BufEnter * let [b:closer, b:closer_flags] = [1, '([{'] | call closer#enable()
 augroup END
 augroup disableNETRWFoldColumn  " {{{3
     au!
