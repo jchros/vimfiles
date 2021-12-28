@@ -53,6 +53,14 @@ if executable('nvim')  " {{{2
 Plug 'hrsh7th/nvim-cmp'
 " TabNine completions
 Plug 'tzachar/cmp-tabnine', #{do: './install.sh'}
+" Omnifunc completions
+Plug 'hrsh7th/cmp-omni'
+" Path completions
+Plug 'hrsh7th/cmp-path'
+" Buffer completions
+Plug 'hrsh7th/cmp-buffer'
+" LSP completions
+Plug 'hrsh7th/cmp-nvim-lsp'
 " Client for Eclipse JDT's LSP
 Plug 'mfussenegger/nvim-jdtls'
 endif " }}}2
