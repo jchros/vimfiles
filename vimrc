@@ -50,9 +50,17 @@ Plug 'sgur/vim-textobj-parameter'
 
 if executable('nvim')  " {{{2
 " Auto-completion backend
-Plug 'hrsh7th/nvim-compe'
+Plug 'hrsh7th/nvim-cmp'
 " TabNine completions
-Plug 'tzachar/compe-tabnine', #{do: './install.sh'}
+Plug 'tzachar/cmp-tabnine', #{do: './install.sh'}
+" Omnifunc completions
+Plug 'hrsh7th/cmp-omni'
+" Path completions
+Plug 'hrsh7th/cmp-path'
+" Buffer completions
+Plug 'hrsh7th/cmp-buffer'
+" LSP completions
+Plug 'hrsh7th/cmp-nvim-lsp'
 " Client for Eclipse JDT's LSP
 Plug 'mfussenegger/nvim-jdtls'
 endif " }}}2
