@@ -27,7 +27,7 @@ fun s:unmatched(...) abort
 			call remove(context, 0)
 		endif
 	endfor
-	return in_quote ? '' : join(context, '')
+	return get(context, 0, '')
 endfun
 
 inoremap <expr> <c-e> '<c-o>$' . <sid>unmatched()
