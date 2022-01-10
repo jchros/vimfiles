@@ -61,6 +61,8 @@ Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-buffer'
 " LSP completions
 Plug 'hrsh7th/cmp-nvim-lsp'
+" Integration of vsnip into cmp
+Plug 'hrsh7th/cmp-vsnip'
 " Client for Eclipse JDT's LSP
 Plug 'mfussenegger/nvim-jdtls'
 endif " }}}2
@@ -115,6 +117,8 @@ Plug 'Olical/vim-expand'
 Plug 'tpope/vim-eunuch'
 " Automatically update HTML tags
 Plug 'AndrewRadev/tagalong.vim'
+" Snippet engine
+Plug 'hrsh7th/vim-vsnip'
 
 " A color scheme
 Plug 'srcery-colors/srcery-vim'
