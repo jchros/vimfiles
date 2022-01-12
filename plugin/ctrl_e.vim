@@ -19,9 +19,7 @@ fun s:unmatched(...) abort
 			endif
 		elseif has_key(closers, c)
 			" More nesting!
-			if closers[c] == c
-				let in_quote = v:true
-			endif
+			let in_quote = closers[c] == c
 			call insert(context, closers[c])
 		elseif c == get(context, 0, '')
 			call remove(context, 0)
