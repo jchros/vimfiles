@@ -20,6 +20,8 @@ own GitHub repositories:
 - [`IndentSettings.vim`](plugin/IndentSettings.vim): Ex commands to
   quickly change the values of `'expandtab'`, `'tabstop'`,
   `'softtabstop'`, and `'shiftwidth'`.
+- [`cmus.vim`](plugin/cmus.vim): Ex commands and mappings to control
+  cmus.
 
 These are also licensed under the [0BSD license](LICENSE).
 
