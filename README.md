@@ -22,6 +22,9 @@ own GitHub repositories:
   `'softtabstop'`, and `'shiftwidth'`.
 - [`cmus.vim`](plugin/cmus.vim): Ex commands and mappings to control
   cmus.
+- [`ctrl_e.vim`](plugin/ctrl_e.vim): Adds an insert mode mapping (bound
+  to `CTRL_E`) which jumps to the end of the current line and closes
+  brackets and quoted strings.
 
 These are also licensed under the [0BSD license](LICENSE).
 
