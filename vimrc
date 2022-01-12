@@ -309,3 +309,4 @@ if !exists(":DiffOrig")
 		  \ | wincmd p | diffthis
 endif
 
+au BufNewFile,BufRead .clang-format set filetype=yaml
