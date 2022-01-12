@@ -20,7 +20,7 @@ endif
 " Install vim-plug if you don't have it yet
 " This will only work on Unix machines (BSD, Linux, etc.)
 if has('unix') && !exists('g:NO_INSTALL_PLUG')
-    source ~/.vim/scripts/install-vim-plug.vim
+    call kkp#try_to_get_vim_plug()
 endif
 
 let s:vim_plug_folder = kkp#VimFolder() . 'plugged'
