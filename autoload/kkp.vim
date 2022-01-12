@@ -40,6 +40,11 @@ fun {expand('<sfile>:t:r')}#user_wants_to(prompt) abort
     return l:res == l:yes
 endfun
 
+fun {expand('<sfile>:t:r')}#has_viminfo_bang() abort
+    let viminfo = has('viminfo') ? &viminfo : (has('nvim') ? &shada : '')
+    return index(split(viminfo, ','), '!') != -1
+endfun
+
 fun {expand('<sfile>:t:r')}#try_to_get_vim_plug() abort
     if !has('dialog_' . (has('gui_running') ? 'gui' : 'con'))
         " Can't ask if the user wants to get vim-plug; default to no
@@ -52,8 +57,12 @@ fun {expand('<sfile>:t:r')}#try_to_get_vim_plug() abort
         return
     endif
     if !{expand('<sfile>:t:r')}#get_vim_plug()
-        let l:msg = 'Run the following command to avoid'
-        let l:msg.= 'being prompted in the future:'
+        if {expand('<sfile>:t:r')}#has_viminfo_bang()
+            let l:msg = 'Run the following command'
+        else
+            let l:msg = 'Add the following command to your vimrc'
+        endif
+        let l:msg.= 'to avoid being prompted in the future:'
         let l:msg.= "\n" . 'let g:NO_INSTALL_PLUG = v:true'
         echomsg l:msg
         return
