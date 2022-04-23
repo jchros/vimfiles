@@ -65,6 +65,8 @@ Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-vsnip'
 " Client for Eclipse JDT's LSP
 Plug 'mfussenegger/nvim-jdtls'
+" A nice colorscheme
+Plug 'rebelot/kanagawa.nvim'
 endif " }}}2
 
 " Convenient Vim wrappers for Unix commands
@@ -128,7 +130,7 @@ call plug#end()
 " THEMING {{{1
 let g:hybrid_reduced_contrast = 1
 
-colorscheme srcery
+execute 'colorscheme' (has('nvim') ? 'kanagawa' : 'srcery')
 
 " STORE VIMINFO INTO VIMFILES DIRECTORY {{{1
 let s:viminfo_folder  = kkp#VimFolder() . 'viminfo'
