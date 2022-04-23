@@ -279,6 +279,7 @@ runtime ftplugin/man.vim
 command -bar -bang Writeable set modifiable noreadonly
 
 command -bar -nargs=? -complete=dir Tex Texplore <args>
+command -bar -nargs=? -complete=dir Ex Explore <args>
 
 " Digraph for inserting narrow non-breaking spaces
 digraph NN 8239
