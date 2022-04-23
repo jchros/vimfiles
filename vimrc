@@ -270,8 +270,6 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 
 let g:lisp_rainbow = v:true
 
-autocmd VimEnter * call insert(g:vim_parinfer_globs, '.*cl')
-
 " Browse man pages without exiting Vim (see :help :Man)
 runtime ftplugin/man.vim
 
