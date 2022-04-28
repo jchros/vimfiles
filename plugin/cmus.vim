@@ -6,6 +6,8 @@ if executable('cmus') && executable('cmus-remote')
 	endif
 	nnoremap <leader>c <Cmd>call system('cmus-remote -u')<cr>
 	nnoremap <leader>C <Cmd>call system('cmus-remote -C toggle\ continue')<cr>
-	tnoremap <C-W><leader>c <Cmd>call system('cmus-remote -u')<cr>
-	tnoremap <C-W><leader>C <Cmd>call system('cmus-remote -C toggle\ continue')<cr>
+	if !has('nvim')
+		tnoremap <C-W><leader>c <Cmd>call system('cmus-remote -u')<cr>
+		tnoremap <C-W><leader>C <Cmd>call system('cmus-remote -C toggle\ continue')<cr>
+	endif
 endif
