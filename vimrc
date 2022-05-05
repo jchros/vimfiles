@@ -178,6 +178,15 @@ if has('folding')         " Creates folds using markers
     se foldmethod=marker  " (i.e: those triple braces sprinkled all over
 endif                     " this file)
 
+se formatoptions=
+se formatoptions+=c       " Use 'textwidth' to wrap comments
+se formatoptions+=q       " and allow comment formatting with gq and gw
+se formatoptions+=2       " Use the indent of the second line in
+                          " subsequent lines of a paragraph if it
+                          " differs from that of the first line
+se formatoptions+=j       " Remove comment leaders when joining lines
+se formatoptions+=o       " Add comment leaders when using o
+
 se hidden                 " Switch between buffers without having to
                           " save first
 
