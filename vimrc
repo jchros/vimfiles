@@ -132,11 +132,6 @@ Plug 'srcery-colors/srcery-vim'
 
 call plug#end()
 
-" THEMING {{{1
-let g:hybrid_reduced_contrast = 1
-
-execute 'colorscheme' (has('nvim') ? 'kanagawa' : 'srcery')
-
 " STORE VIMINFO INTO VIMFILES DIRECTORY {{{1
 let s:viminfo_folder  = kkp#VimFolder() . 'viminfo'
 if has('viminfo')
@@ -258,7 +253,9 @@ se wildmode+=full         " then each full match
 se nowrap                 " Disable line wrapping
 
 " MISCELLANEOUS {{{1
-"
+
+execute 'colorscheme' (has('nvim') ? 'kanagawa' : 'srcery')
+
 " Options for emmet-vim {{{2
 let g:user_emmet_install_global = 0
 autocmd FileType html,css,php,javascript EmmetInstall
