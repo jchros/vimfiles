@@ -49,24 +49,29 @@ Plug 'bps/vim-textobj-python'
 Plug 'sgur/vim-textobj-parameter'
 
 if executable('nvim')  " {{{2
+let Nvim = has('nvim') ? {} : #{on: []}
+func Nvim(opts)
+    return extend(a:opts, g:Nvim)
+endfunc
 " Auto-completion backend
-Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/nvim-cmp', Nvim
 " TabNine completions
-Plug 'tzachar/cmp-tabnine', #{do: './install.sh'}
+Plug 'tzachar/cmp-tabnine', Nvim(#{do: './install.sh'})
 " Omnifunc completions
-Plug 'hrsh7th/cmp-omni'
+Plug 'hrsh7th/cmp-omni', Nvim
 " Path completions
-Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-path', Nvim
 " Buffer completions
-Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-buffer', Nvim
 " LSP completions
-Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-nvim-lsp', Nvim
 " Integration of vsnip into cmp
-Plug 'hrsh7th/cmp-vsnip'
+Plug 'hrsh7th/cmp-vsnip', Nvim
 " Client for Eclipse JDT's LSP
-Plug 'mfussenegger/nvim-jdtls'
+Plug 'mfussenegger/nvim-jdtls', Nvim
 " A nice colorscheme
-Plug 'rebelot/kanagawa.nvim'
+Plug 'rebelot/kanagawa.nvim', Nvim
+unlet Nvim | delfunc Nvim
 endif " }}}2
 
 " Convenient Vim wrappers for Unix commands
