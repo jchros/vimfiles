@@ -1,6 +1,11 @@
 " Change the setup of Parinfer, which does things I don't want it to do by
 " default, such as setting the tab character to indent lines in insert mode
 
+" Check if parinfer exists
+if !has('g:vim_parinfer_filetypes')
+	finish
+endif
+
 command -nargs=+ ParinferAutocmd execute 'autocmd FileType' join(g:vim_parinfer_filetypes, ',') <q-args>
 
 " Adds the Parinfer autocmds I want to the filetypes I want

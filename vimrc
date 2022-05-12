@@ -104,7 +104,11 @@ Plug 'vlime/vlime', #{rtp: 'vim/'}
 " Smarter substitutions and easySwitching between letter_casings
 Plug 'tpope/vim-abolish'
 " Automagically balances parentheses in Lisp files
-Plug 'bhurlow/vim-parinfer'
+if executable('cargo')
+    Plug 'eraserhd/parinfer-rust', #{do: 'cargo build --release'}
+else
+    Plug 'bhurlow/vim-parinfer'
+endif
 
 if has('osxdarwin')
     Plug '~/.vim/plugged/iTunes-current-track'
