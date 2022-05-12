@@ -132,12 +132,6 @@ Plug 'srcery-colors/srcery-vim'
 
 call plug#end()
 
-" STORE VIMINFO INTO VIMFILES DIRECTORY {{{1
-let s:viminfo_folder  = kkp#VimFolder() . 'viminfo'
-if has('viminfo')
-    silent call execute('se viminfofile=' . s:viminfo_folder)
-endif
-
 " OPTIONS {{{1
 
 let mapleader      = ' '  " 1 space
@@ -322,3 +316,7 @@ if !exists(":DiffOrig")
 endif
 
 au BufNewFile,BufRead .clang-format set filetype=yaml
+
+if has('viminfo')
+    let &viminfofile = kkp#VimFolder() . 'viminfo'
+endif
