@@ -23,7 +23,7 @@ if has('unix') && !exists('g:NO_INSTALL_PLUG')
     call kkp#try_to_get_vim_plug()
 endif
 
-let s:vim_plug_folder = kkp#VimFolder() . 'plugged'
+let s:vim_plug_folder = expand('<sfile>:p:h') . '/plugged'
 call plug#begin(s:vim_plug_folder)
 
 " Get and update vim-plug's documentation
@@ -318,5 +318,5 @@ endif
 au BufNewFile,BufRead .clang-format set filetype=yaml
 
 if has('viminfo')
-    let &viminfofile = kkp#VimFolder() . 'viminfo'
+    let &viminfofile = expand('sfile>:p:h') . '/viminfo'
 endif

@@ -13,15 +13,6 @@ fun {s:f}#FileExists(file) abort
     return !empty(glob(a:file))
 endfun
 
-fun {s:f}#VimFolder() abort
-    if has('unix')
-        return '~/.vim/'
-    elseif has('win32')
-        return '$HOME\vimfiles\'
-    endif
-    throw 'Unknown operating system'
-endfun
-
 fun {s:f}#get_vim_plug() abort
     if !{s:f}#user_wants_to('Get vim-plug?')
         return v:false
