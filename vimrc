@@ -116,8 +116,6 @@ endif
 
 " Focus in one section of text by removing the rest
 Plug 'chrisbra/NrrwRgn'
-" Automatically close brackets on newlines
-Plug 'rstacruz/vim-closer'
 " Preview substitution patterns
 Plug 'markonm/traces.vim'
 " Caps lock for Vim
@@ -262,10 +260,6 @@ autocmd FileType html,css,php,javascript EmmetInstall
 augroup DisableList  " {{{3
     au!
     au FileType man setlocal nolist
-augroup END
-augroup EnableVimCloserOnAllBuffers  " {{{3
-    au!
-    au BufEnter * let [b:closer, b:closer_flags] = [1, '([{'] | call closer#enable()
 augroup END
 augroup disableNETRWFoldColumn  " {{{3
     au!
