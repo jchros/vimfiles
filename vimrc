@@ -128,6 +128,8 @@ Plug 'tpope/vim-eunuch'
 Plug 'AndrewRadev/tagalong.vim'
 " Snippet engine
 Plug 'hrsh7th/vim-vsnip'
+" Integration with jupyter-ascending
+Plug 'untitled-ai/jupyter_ascending.vim'
 
 " A color scheme
 Plug 'srcery-colors/srcery-vim'
