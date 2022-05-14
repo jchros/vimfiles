@@ -143,3 +143,7 @@ nmap gx  <Plug>(Exchange)
 xmap  X  <Plug>(Exchange)
 nmap gxc <Plug>(ExchangeClear)
 nmap gxx <Plug>(ExchangeLine)
+
+" For vim-vsnip {{{1
+imap <expr> <c-b> vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : ''
+smap <expr> <c-b> vsnip#jumpable(1) ? '<Plug>(vsnip-jump-next)' : ''
