@@ -26,9 +26,9 @@ fun {s:f}#get_vim_plug() abort
 endfun
 
 fun {s:f}#user_wants_to(prompt) abort
-    let [l:yes, l:no] = [1, 2]
-    let l:res = confirm(a:prompt, "&Yes\n&No")
-    return l:res == l:yes
+    let [yes, no] = [1, 2]
+    let res = confirm(a:prompt, "&Yes\n&No")
+    return res == yes
 endfun
 
 fun {s:f}#has_viminfo_bang() abort
@@ -43,19 +43,18 @@ fun {s:f}#try_to_get_vim_plug() abort
     endif
 
     let vim_plug_path = '~/.vim/autoload/plug.vim'
-    if kkp#FileExists(vim_plug_path)
+    if {s:f}#FileExists(vim_plug_path)
         " No need to install
         return
-    endif
-    if !{s:f}#get_vim_plug()
-        if {s:f}#has_viminfo_bang()
-            let l:msg = 'Run the following command'
-        else
-            let l:msg = 'Add the following command to your vimrc'
-        endif
-        let l:msg.= 'to avoid being prompted in the future:'
-        let l:msg.= "\n" . 'let g:NO_INSTALL_PLUG = v:true'
-        echomsg l:msg
+    elseif {s:f}#get_vim_plug()
+        " vim-plug has been installed; exit
         return
     endif
+    if {s:f}#has_viminfo_bang()
+        let do_this = 'Run the following command'
+    else
+        let do_this = 'Add the following command atop the vimrc'
+    endif
+    echomsg do_this 'to avoid being prompted in the future:'
+    echomsg 'let g:NO_INSTALL_PLUG = v:true'
 endfun
