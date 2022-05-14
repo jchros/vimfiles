@@ -74,6 +74,7 @@ Plug 'rebelot/kanagawa.nvim', Nvim
 unlet Nvim | delfunc Nvim
 endif " }}}2
 
+let VimOnly = has('nvim') ? #{on: []} : {}
 " Convenient Vim wrappers for Unix commands
 Plug 'tpope/vim-eunuch'
 " Displays the relevant color for an RGB hex code or CSS color name
@@ -88,7 +89,7 @@ Plug 'unblevable/quick-scope'
 Plug 'tpope/vim-repeat'
 
 " A little video game showing off some of Vim's latest features
-Plug 'vim/killersheep'
+Plug 'vim/killersheep', VimOnly
 " Allows you to swap two text objects
 Plug 'jchros/vim-exchange', #{branch: 'persist-hl-status-on-cs-change'}
 " Allows for smooth scrolling
@@ -117,7 +118,7 @@ endif
 " Focus in one section of text by removing the rest
 Plug 'chrisbra/NrrwRgn'
 " Preview substitution patterns
-Plug 'markonm/traces.vim'
+Plug 'markonm/traces.vim', VimOnly
 " Caps lock for Vim
 Plug 'tpope/vim-capslock'
 " I mostly use this plugin for brace expansion
@@ -131,6 +132,7 @@ Plug 'hrsh7th/vim-vsnip'
 
 " A color scheme
 Plug 'srcery-colors/srcery-vim'
+unlet VimOnly
 
 call plug#end()
 
