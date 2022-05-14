@@ -26,6 +26,9 @@ fun {s:f}#get_vim_plug() abort
 endfun
 
 fun {s:f}#user_wants_to(prompt) abort
+    if !has('dialog_gui') && !has('dialog_con')
+        throw "Can't use confirm() without the +dialog_con feature."
+    endif
     let [yes, no] = [1, 2]
     let res = confirm(a:prompt, "&Yes\n&No")
     return res == yes
@@ -37,11 +40,6 @@ fun {s:f}#has_viminfo_bang() abort
 endfun
 
 fun {s:f}#try_to_get_vim_plug() abort
-    if !has('dialog_' . (has('gui_running') ? 'gui' : 'con'))
-        " Can't ask if the user wants to get vim-plug; default to no
-        return
-    endif
-
     let vim_plug_path = expand('<sfile>:p:h') . '/autoload/plug.vim'
     if {s:f}#file_exists(vim_plug_path)
         " No need to install
