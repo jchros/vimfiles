@@ -247,6 +247,8 @@ se wildmode=longest       " Complete longest common string,
 se wildmode+=full         " then each full match
 
 se nowrap                 " Disable line wrapping
+se linebreak              " ... but when it's enabled, break
+                          " lines on word boundaries
 
 " MISCELLANEOUS {{{1
 
