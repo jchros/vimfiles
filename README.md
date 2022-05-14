@@ -44,7 +44,7 @@ nnoremap        ¶ O<Esc>jgM
 " Toggle casing of a single character
 noremap ç ~
 " Toggle casing of a word
-vnoremap Ç viwç
+vnoremap Ç viw~
 
 " Typing the pipe character is inconvenient in AZERTY keyboards
 cnoremap § \|
