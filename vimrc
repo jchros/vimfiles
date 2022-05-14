@@ -123,8 +123,6 @@ Plug 'markonm/traces.vim', VimOnly
 Plug 'tpope/vim-capslock'
 " I mostly use this plugin for brace expansion
 Plug 'Olical/vim-expand'
-" Convenient commands for UNIX
-Plug 'tpope/vim-eunuch'
 " Automatically update HTML tags
 Plug 'AndrewRadev/tagalong.vim'
 " Snippet engine
