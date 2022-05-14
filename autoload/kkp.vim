@@ -25,12 +25,12 @@ fun {s:f}#get_vim_plug() abort
     return v:true
 endfun
 
-fun {s:f}#user_wants_to(prompt) abort
+fun {s:f}#user_wants_to(prompt, ...) abort
     if !has('dialog_gui') && !has('dialog_con')
         throw "Can't use confirm() without the +dialog_con feature."
     endif
     let [yes, no] = [1, 2]
-    let res = confirm(a:prompt, "&Yes\n&No")
+    let res = confirm(a:prompt, "&Yes\n&No", get(a:, 1) ? yes : no)
     return res == yes
 endfun
 
