@@ -147,7 +147,7 @@ se autoread               " Update the file automatically when changed
                           " Make it so that backspace can:
 se backspace=indent       " - remove a level of indentation
 se backspace+=eol         " - remove new lines characters
-if !has('patch-8.2.0590')
+if !has('patch-8.2.0590') && !has('nvim-0.5.0')
     se backspace+=start   " - backspace before the insertion point
 else                      "   but if your Vim is recent enough...
     se backspace+=nostop  "   ... then <C-W> and <C-U> can remove
