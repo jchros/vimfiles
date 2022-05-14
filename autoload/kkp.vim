@@ -18,7 +18,7 @@ fun {s:f}#get_vim_plug() abort
         return v:false
     endif
     echomsg 'Downloading vim-plug'
-    !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    !curl -fLo <sfile>:p:h/autoload/plug.vim --create-dirs
 \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     echomsg 'Installing vim-plug'
     autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
@@ -42,7 +42,7 @@ fun {s:f}#try_to_get_vim_plug() abort
         return
     endif
 
-    let vim_plug_path = '~/.vim/autoload/plug.vim'
+    let vim_plug_path = expand('<sfile>:p:h') . '/autoload/plug.vim'
     if {s:f}#FileExists(vim_plug_path)
         " No need to install
         return
