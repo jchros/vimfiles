@@ -9,7 +9,7 @@
 " This allows us to rename the file without changing any of its contents
 let s:f = expand('<sfile>:t:r')
 
-fun {s:f}#FileExists(file) abort
+fun {s:f}#file_exists(file) abort
     return !empty(glob(a:file))
 endfun
 
@@ -43,7 +43,7 @@ fun {s:f}#try_to_get_vim_plug() abort
     endif
 
     let vim_plug_path = expand('<sfile>:p:h') . '/autoload/plug.vim'
-    if {s:f}#FileExists(vim_plug_path)
+    if {s:f}#file_exists(vim_plug_path)
         " No need to install
         return
     elseif {s:f}#get_vim_plug()
