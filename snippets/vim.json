@@ -1,0 +1,20 @@
+{
+	"function": {
+		"prefix": "function",
+		"body": [
+			"func ${1:${VIM:vsnip_helpers#autoload_prefix(expand('%'))}$2}(${3:...}) ${4:abort}",
+			"\t$0",
+			"endfunc"
+		],
+		"description": "Vim 8 function"
+	},
+	"augroup": {
+		"prefix": "augroup",
+		"body": [
+			"augroup $1",
+			"\tau!$0",
+			"augroup END"
+		],
+		"description": "Define a new augroup"
+	}
+}

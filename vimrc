@@ -320,3 +320,5 @@ au BufNewFile,BufRead .clang-format set filetype=yaml
 if has('viminfo')
     let &viminfofile = expand('sfile>:p:h') . '/viminfo'
 endif
+
+let g:vsnip_snippet_dir = expand('<sfile>:p:h') . '/snippets'
