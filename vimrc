@@ -324,6 +324,7 @@ endif
 
 let g:vsnip_snippet_dir = expand('<sfile>:p:h') . '/snippets'
 
+" Taken from here: https://www.reddit.com/r/vim/comments/usktg6/relative_numbers_to_absolute_when_entering/i95o1iq/
 augroup numbertoggles
     au!
     nnoremap <expr> : '<cmd>set norelativenumber<cr>' . (v:count ? v:count : '') . ':'
