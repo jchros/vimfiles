@@ -3,9 +3,10 @@
 function s:Map(lhs, rhs, ...) abort
 	" Parse options
 	let opts = a:000
+	let nore = index(opts, "nore") >= 0 ? 'nore' : ''
 
 	" Form command
-	let cmd = 'map'
+	let cmd = nore . 'map'
 
 	" Define mapping for normal mode
 	execute 'n'.cmd a:lhs a:rhs
@@ -41,14 +42,14 @@ nnoremap <leader>o <C-W>o
 
 " Quick buffer navigation {{{1
 " Read https://stackoverflow.com/a/24903110
-call s:Map('gb', ':ls<cr>:b')
+call s:Map('gb', ':ls<cr>:b', 'nore')
 
 " Open existing buffer in new tab
-call s:Map('gB', ':ls<cr>:tab sbuffer<Space>')
+call s:Map('gB', ':ls<cr>:tab sbuffer<Space>', 'nore')
 " in a vertical split
-call s:Map('<leader>b', ':ls<cr>:vert sbuffer<Space>')
+call s:Map('<leader>b', ':ls<cr>:vert sbuffer<Space>', 'nore')
 "in a horizontal split
-call s:Map('<leader>B', ':ls<cr>:sbuffer<Space>')
+call s:Map('<leader>B', ':ls<cr>:sbuffer<Space>', 'nore')
 
 " Quick tab navigation {{{1
 " Make it easier to switch tabs
