@@ -2,14 +2,10 @@
 " as well as from Vim's terminal mode — but not from NeoVim's
 function s:Map(lhs, rhs, ...) abort
 	" Parse options
-        let opts = a:000
-	let silent = index(opts, "silent") > 0
+	let opts = a:000
 
 	" Form command
 	let cmd = 'map'
-	if silent
-		let cmd .= ' <silent>'
-	endif
 
 	" Define mapping for normal mode
 	execute 'n'.cmd a:lhs a:rhs
