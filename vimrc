@@ -205,6 +205,7 @@ se nrformats+=hex         " - hexadecimal literals
 se nrformats+=octal       " - octal literals
 
 se numberwidth=3          " Use 3 columns to display
+se number                 " the current line number and
 se relativenumber         " the line number relative to the cursor line
                           " See `:h number_relativenumber`
 
@@ -322,3 +323,10 @@ if has('viminfo')
 endif
 
 let g:vsnip_snippet_dir = expand('<sfile>:p:h') . '/snippets'
+
+augroup numbertoggles
+    au!
+    nnoremap <expr> : '<cmd>set norelativenumber<cr>' . (v:count ? v:count : '') . ':'
+    au OptionSet number execute(v:option_new ? 'nnoremap <expr> : "<cmd>set norelativenumber<cr>" . (v:count ? v:count : "") . ":"' : 'nunmap :')
+    au CmdlineLeave : if &number | set relativenumber | endif
+augroup END
