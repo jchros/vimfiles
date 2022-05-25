@@ -112,26 +112,26 @@ nnoremap <expr> § 'o<Esc>' . v:count1 . 'kgM'
 " since the last line added by "O" always ends up above the
 " current line, we only need to move the cursor down once.
 if !empty($AZERTY)
-    nnoremap ¶ O<Esc>jgM
+	nnoremap ¶ O<Esc>jgM
 else
-    nnoremap ± O<Esc>jgM
+	nnoremap ± O<Esc>jgM
 endif
 
 if !empty($AZERTY) " {{{1
-    " Toggle casing of a single character
-    noremap ç ~
-    " Toggle casing of a word
-    vnoremap Ç viw~
+	" Toggle casing of a single character
+	noremap ç ~
+	" Toggle casing of a word
+	vnoremap Ç viw~
 
-    " Typing the pipe character is inconvenient in AZERTY keyboards
-     noremap! § \|
-    tnoremap  § \|
+	" Typing the pipe character is inconvenient in AZERTY keyboards
+	 noremap! § \|
+	tnoremap  § \|
 else
-    " § is closer to the home row than <Esc>
-    onoremap  § <Esc>
-    vnoremap  § <Esc>
-     noremap! § <Esc>
-    tnoremap  § <Esc>
+	" § is closer to the home row than <Esc>
+	onoremap  § <Esc>
+	vnoremap  § <Esc>
+	 noremap! § <Esc>
+	tnoremap  § <Esc>
 endif
 
 " Use evil-exchange's mappings {{{1
