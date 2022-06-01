@@ -136,9 +136,16 @@ Plug 'lifepillar/vim-colortemplate'
 unlet VimOnly
 
 " FZF {{{2
-if executable('brew') && executable('fzf')
-    " Use the FZF installed by Homebrew instead of downloading it again
-    set rtp+=/usr/local/opt/fzf
+func FZFLocation() abort
+    if !executable('brew')
+        return ''
+    endif
+    let res = systemlist('brew --prefix fzf')[0]
+    return v:shell_error ? '' : res
+endfunc
+
+if !empty(FZFLocation())
+    let &runtimepath .= ',' . FZFLocation()
 else
     Plug 'junegunn/fzf', #{do: ':call fzf#install()' }
 endif " }}}2
