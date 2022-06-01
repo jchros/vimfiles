@@ -130,7 +130,18 @@ Plug 'hrsh7th/vim-vsnip'
 
 " A color scheme
 Plug 'srcery-colors/srcery-vim'
+" A colorscheme editor
+Plug 'lifepillar/vim-colortemplate'
+
 unlet VimOnly
+
+" FZF {{{2
+if executable('brew') && executable('fzf')
+    " Use the FZF installed by Homebrew instead of downloading it again
+    set rtp+=/usr/local/opt/fzf
+else
+    Plug 'junegunn/fzf', #{do: ':call fzf#install()' }
+endif " }}}2
 
 call plug#end()
 
