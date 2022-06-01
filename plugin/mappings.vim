@@ -96,6 +96,9 @@ nnoremap <leader>h <Cmd>helpclose<CR>
 nnoremap vx :Expand<CR>
 xnoremap vx :Expand<CR>
 
+" Line completion
+inoremap <C-L> <C-X><C-L>
+
 " Quickly insert a blank line {{{1
 "
 " Add line(s) below the cursor
