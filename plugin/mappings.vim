@@ -91,6 +91,8 @@ map <leader>X <Cmd>call <sid>CtrlXVariable()<CR>
 vmap <leader>a <Cmd>call <sid>CtrlAVariable(0)<CR>
 vmap <leader>x <Cmd>call <sid>CtrlXVariable(0)<CR>
 
+nnoremap <leader>h <Cmd>helpclose<CR>
+
 nnoremap vx :Expand<CR>
 xnoremap vx :Expand<CR>
 
