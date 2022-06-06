@@ -71,6 +71,10 @@ Plug 'hrsh7th/cmp-vsnip', Nvim
 Plug 'mfussenegger/nvim-jdtls', Nvim
 " A nice colorscheme
 Plug 'rebelot/kanagawa.nvim', Nvim
+" treesitter
+Plug 'nvim-treesitter/nvim-treesitter', Nvim(#{do: ':TSUpdate'})
+" treesitter playground
+Plug 'nvim-treesitter/playground'
 unlet Nvim | delfunc Nvim
 endif " }}}2
 
