@@ -262,6 +262,13 @@ if has('wildmenu')        " Display completion matches in a status line
     se wildmenu
 endif
 
+let s:wildignore =<< trim END
+    */node_modules/*
+    */.git/*
+    */__pycache__/*
+END
+let &wildignore .= join(s:wildignore, ',')
+
 se wildmode=longest       " Complete longest common string,
 se wildmode+=full         " then each full match
 
