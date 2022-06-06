@@ -365,6 +365,8 @@ let g:vsnip_snippet_dir = expand('<sfile>:p:h') . '/snippets'
 augroup numbertoggles
     au!
     nnoremap <expr> : '<cmd>set norelativenumber<cr>' . (v:count ? v:count : '') . ':'
-    au OptionSet number execute(v:option_new ? 'nnoremap <expr> : "<cmd>set norelativenumber<cr>" . (v:count ? v:count : "") . ":"' : 'nunmap :')
+    au OptionSet number execute(v:option_new
+        \? 'nnoremap <expr> : "<cmd>set norelativenumber<cr>" . (v:count ? v:count : "") . ":"'
+        \: 'try | nunmap : | endtry')
     au CmdlineLeave : if &number | set relativenumber | endif
 augroup END
