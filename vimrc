@@ -337,8 +337,16 @@ let g:traces_abolish_integration = 1
 " Only define it when not defined already.
 " Revert with: ":delcommand DiffOrig".
 if !exists(":DiffOrig")
-  command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
-		  \ | wincmd p | diffthis
+  command DiffOrig
+  \  vert new
+  \| set bt=nofile
+  \| r ++edit #
+  \| 0d_
+  \| diffthis
+  \| execute 'autocmd BufWritePost <buffer=' . bufnr('#') . '> ++once'
+  \     'try | bd' bufnr() '| endtry'
+  \| wincmd p
+  \| diffthis
 endif
 
 au BufNewFile,BufRead .clang-format set filetype=yaml
