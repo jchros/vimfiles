@@ -370,3 +370,6 @@ augroup numbertoggles
         \: 'try | nunmap : | endtry')
     au CmdlineLeave : if &number | set relativenumber | endif
 augroup END
+
+" Remove Vim's weird "double-indent in parens" on Python files
+let g:pyindent_disable_parentheses_indenting = 1
