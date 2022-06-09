@@ -23,7 +23,8 @@ if has('unix') && !exists('g:NO_INSTALL_PLUG')
     call kkp#try_to_get_vim_plug()
 endif
 
-let s:vim_plug_folder = expand('<sfile>:p:h') . '/plugged'
+let g:vimfiles_dir = expand('<sfile>:p:h')
+let s:vim_plug_folder = g:vimfiles_dir . '/plugged'
 call plug#begin(s:vim_plug_folder)
 
 " Get and update vim-plug's documentation
@@ -356,10 +357,10 @@ endif
 au BufNewFile,BufRead .clang-format set filetype=yaml
 
 if has('viminfo')
-    let &viminfofile = expand('sfile>:p:h') . '/viminfo'
+    let &viminfofile = g:vimfiles_dir . '/viminfo'
 endif
 
-let g:vsnip_snippet_dir = expand('<sfile>:p:h') . '/snippets'
+let g:vsnip_snippet_dir = g:vimfiles_dir . '/snippets'
 
 " Taken from here: https://www.reddit.com/r/vim/comments/usktg6/relative_numbers_to_absolute_when_entering/i95o1iq/
 augroup numbertoggles
