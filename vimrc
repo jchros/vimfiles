@@ -368,7 +368,7 @@ augroup numbertoggles
     nnoremap <expr> : '<cmd>set norelativenumber<cr>' . (v:count ? v:count : '') . ':'
     au OptionSet number execute(v:option_new
         \? 'nnoremap <expr> : "<cmd>set norelativenumber<cr>" . (v:count ? v:count : "") . ":"'
-        \: 'try | nunmap : | endtry')
+        \: 'try | nunmap : | catch /^Vim\%((\a\+)\)\?:E31:/ | endtry')
     au CmdlineLeave : if &number | set relativenumber | endif
 augroup END
 
