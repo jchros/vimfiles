@@ -375,7 +375,7 @@ augroup END
 " Remove Vim's weird "double-indent in parens" on Python files
 let g:pyindent_disable_parentheses_indenting = 1
 
-command -nargs=+ -bar -bang
+command -nargs=+ -bar -bang -complete=custom,open_note#complete
 \   OpenNote call open_note#cmd_interface(#{
 \       bang: <bang>0,
 \       mods: '<mods>',
