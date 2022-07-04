@@ -1,5 +1,7 @@
 let open_note#doc_dir = g:vimfiles_dir . '/doc'
-const s:can_grep_tags = executable('grep') && kkp#file_exists(g:open_note#doc_dir . '/tags')
+func s:can_grep_tags() abort
+	return executable('grep') && kkp#file_exists(g:open_note#doc_dir . '/tags')
+endfunc
 
 func open_note#cmd_interface(info) abort
 	if a:info.bang
@@ -13,7 +15,7 @@ func open_note#(name, desc) abort
 	if empty(a:name)
 		throw 'Note name is missing.'
 	endif
-	if s:can_grep_tags
+	if s:can_grep_tags()
 		let tag = systemlist(['grep', '-F', ';' . a:name, g:open_note#doc_dir . '/tags'])
 		if !empty(tag)
 			let [tag, file] = split(tag[0], "\t")[0:1]
@@ -49,13 +51,10 @@ func open_note#in_new_window(mods, name, desc) abort
 	call append(0, header)
 endfunc
 
-if s:can_grep_tags
-	func open_note#complete(arg_lead, cmd_line, cursor_pos) abort
-		let res = systemlist("grep --only-matching '^;[^\t]*' " . shellescape(g:open_note#doc_dir . '/tags'))
-		return join(map(res, 'v:val[1:]'), "\n")
-	endfunc
-else
-	func open_note#complete(arg_lead, cmd_line, cursor_pos)
+func open_note#complete(arg_lead, cmd_line, cursor_pos) abort
+	if !s:can_grep_tags()
 		return ''
-	endfunc
-endif
+	endif
+	let res = systemlist("grep --only-matching '^;[^\t]*' " . shellescape(g:open_note#doc_dir . '/tags'))
+	return join(map(res, 'v:val[1:]'), "\n")
+endfunc
