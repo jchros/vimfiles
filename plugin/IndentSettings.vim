@@ -1,4 +1,4 @@
-function! GlobalIndentTabs(indent_width = v:none) abort
+function! GlobalIndentTabs(indent_width = v:null) abort
 	if a:indent_width
 		let &tabstop = a:indent_width
 	endif
@@ -6,7 +6,7 @@ function! GlobalIndentTabs(indent_width = v:none) abort
 	set noexpandtab softtabstop=0 shiftwidth=0
 endfunction
 
-function! LocalIndentTabs(indent_width = v:none) abort
+function! LocalIndentTabs(indent_width = v:null) abort
 	if a:indent_width
 		let &l:tabstop = a:indent_width
 	endif
@@ -14,7 +14,7 @@ function! LocalIndentTabs(indent_width = v:none) abort
 	setlocal noexpandtab softtabstop=0 shiftwidth=0
 endfunction
 
-function! IndentTabs(indent_width = v:none, global = v:false) abort
+function! IndentTabs(indent_width = v:null, global = v:false) abort
 	if a:global
 		call GlobalIndentTabs(a:indent_width)
 	else
@@ -41,9 +41,9 @@ function! IndentSpaces(indent_width = 0, global = v:false) abort
 endfunction
 
 command! -bang -bar -nargs=? IndentTabs
-\	call IndentTabs(<q-args> ? <q-args> : v:none, <bang>0)
+\	call IndentTabs(<q-args> ? <q-args> : v:null, <bang>0)
 command! -bang -bar -nargs=? IndentSpaces
-\	call IndentSpaces(<q-args> ? <q-args> : v:none, <bang>0)
+\	call IndentSpaces(<q-args> ? <q-args> : v:null, <bang>0)
 command! -bang -bar -nargs=? TIndent IndentTabs<bang>   <args>
 command! -bang -bar -nargs=? SIndent IndentSpaces<bang> <args>
 
