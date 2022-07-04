@@ -17,10 +17,11 @@ func open_note#(name, desc) abort
 	endif
 	if s:can_grep_tags()
 		let tag = systemlist(['grep', '-F', ';' . a:name, g:open_note#doc_dir . '/tags'])
-		if !empty(tag)
-			let [tag, file] = split(tag[0], "\t")[0:1]
+		if !v:shell_error
+			let [tag, file, pat] = split(tag[0], "\t")
 			let file = join([g:open_note#doc_dir, file], '/')
-			execute 'keeppatterns edit +/\\*' . tag . '\\*' file
+			let pat = '+' . escape(pat, ' \*$~.[]')
+			execute 'keeppatterns edit' pat file
 			return
 		endif
 	endif
