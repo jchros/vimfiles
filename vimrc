@@ -328,10 +328,20 @@ let g:ft_man_folding_enable = 1
 " It tells you what syntax groups apply to the text under the cursor.
 function! SynStack()
   if !exists("*synstack")
-    return
+    return []
   endif
-  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+  return map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
+
+func s:ynstack() abort
+    if exists(':TSHighlightCapturesUnderCursor')
+        TSHighlightCapturesUnderCursor
+    else
+        echo SynStack()
+    endif
+endfunc
+
+command -bar SynStack call <SID>ynstack()
 
 let g:traces_abolish_integration = 1
 
