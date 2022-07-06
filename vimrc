@@ -82,8 +82,6 @@ endif " }}}2
 let VimOnly = has('nvim') ? #{on: []} : {}
 " Convenient Vim wrappers for Unix commands
 Plug 'tpope/vim-eunuch'
-" Displays the relevant color for an RGB hex code or CSS color name
-Plug 'ap/vim-css-color'
 " Keybindings for manipulating parentheses, braces, HTML/XML tags, etc.
 Plug 'tpope/vim-surround'
 " Aligns text using user defined patterns
