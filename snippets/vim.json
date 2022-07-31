@@ -16,5 +16,13 @@
 			"augroup END"
 		],
 		"description": "Define a new augroup"
+	},
+	"Plug": {
+		"prefix": "Plug",
+		"body": [
+			"\" $0",
+			"Plug '${1:${VIM:@+ !~ '/' ? '' : substitute(@+, '^https://github.com/', '', '')}}'"
+		],
+		"description": "Add a plugin using vim-plug"
 	}
 }
