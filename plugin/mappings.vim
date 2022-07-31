@@ -99,6 +99,9 @@ xnoremap vx :Expand<CR>
 " Line completion
 inoremap <C-L> <C-X><C-L>
 
+" completefunc
+inoremap <C-B> <C-X><C-U>
+
 augroup mappings
 	au!
 	" Finds definitions of rules, functions, and constants in
