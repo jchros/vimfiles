@@ -38,11 +38,16 @@ func open_note#in_new_window(mods, name, desc) abort
 	if empty(a:name)
 		throw 'Note a:name is missing.'
 	endif
+	let could_open = v:false
 	try
 		execute a:mods 'help ;' . a:name
 		Writeable
+		let could_open = v:true
 	catch /^Vim\%((\a\+)\)\=:E149:/
 	endtry
+	if could_open
+		return
+	endif
 	let newfile = join([g:open_note#doc_dir, a:name . '.txt'], '/')
 	execute a:mods 'new' newfile
 	let header = '*;' . a:name . '*'
