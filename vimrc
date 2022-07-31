@@ -390,3 +390,11 @@ command -nargs=+ -bar -bang -complete=custom,open_note#complete
 \       name: [<f-args>][0],
 \       desc: join([<f-args>][1:]),
 \   })
+
+" Turn off parinfer by default in tree-sitter query files
+" works only with parinfer-rust
+augroup disable_parinfer_on_tree_sitter_queries
+    au!
+    au BufNewFile,BufRead {locals,highlights,textobjects}.scm
+    \   silent! ParinferOff
+augroup END
