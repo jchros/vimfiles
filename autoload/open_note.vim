@@ -27,11 +27,7 @@ func open_note#(name, desc) abort
 	endif
 	let newfile = join([g:open_note#doc_dir, a:name . '.txt'], '/')
 	execute 'e' newfile
-	let header = '*;' . a:name . '*'
-	if !empty(a:desc)
-		let header .= ' ' . a:desc
-	endif
-	call append(0, header)
+	call open_note#add_header_tag(a:name, a:desc)
 endfunc
 
 func open_note#in_new_window(mods, name, desc) abort
@@ -50,6 +46,10 @@ func open_note#in_new_window(mods, name, desc) abort
 	endif
 	let newfile = join([g:open_note#doc_dir, a:name . '.txt'], '/')
 	execute a:mods 'new' newfile
+	call open_note#add_header_tag(a:name, a:desc)
+endfunc
+
+func open_note#add_header_tag(tag, desc = v:null)
 	let header = '*;' . a:name . '*'
 	if !empty(a:desc)
 		let header .= ' ' . a:desc
