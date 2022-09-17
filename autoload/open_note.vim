@@ -21,7 +21,7 @@ func open_note#(name, desc) abort
 			let [tag, file, pat] = split(tag[0], "\t")
 			let file = join([g:open_note#doc_dir, file], '/')
 			let pat = '+' . escape(pat, ' \*$~.[]')
-			execute 'keeppatterns edit' pat file
+			silent! execute 'keeppatterns edit' pat file
 			return
 		endif
 	endif
