@@ -136,6 +136,9 @@ Plug 'srcery-colors/srcery-vim'
 " A colorscheme editor
 Plug 'lifepillar/vim-colortemplate'
 
+" A plugin for automatically adding closing braces, etc.
+Plug 'tmsvg/pear-tree'
+
 unlet VimOnly
 
 " FZF {{{2
