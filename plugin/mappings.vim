@@ -110,6 +110,10 @@ augroup mappings
 	au BufRead,BufNewFile grammar.js nnoremap <buffer> gd /^\s\+\zs<C-R><C-W>\ze:\\|function\_s\+\zs<C-R><C-W>\ze(\\|\<lt>externals:\_s*(\_s*\$\_s*)\_s*=>\_s*\[\%(\_[^\]]\\|\/\/.*$\)\{-\}\$\.\zs<C-R><C-W>\ze\_s*,<CR>
 augroup END
 
+nnoremap S ciw
+nnoremap X daw
+nnoremap <BS> X
+
 " Quickly insert a blank line {{{1
 "
 " Add line(s) below the cursor
