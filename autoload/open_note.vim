@@ -22,12 +22,14 @@ func open_note#(name, desc) abort
 			let file = join([g:open_note#doc_dir, file], '/')
 			let pat = '+' . escape(pat, ' \*$~.[]')
 			silent! execute 'keeppatterns edit' pat file
+			doautocmd User OpenedNote
 			return
 		endif
 	endif
 	let newfile = join([g:open_note#doc_dir, a:name . '.txt'], '/')
 	execute 'e' newfile
 	call open_note#add_header_tag(a:name, a:desc)
+	doautocmd User OpenedNote
 endfunc
 
 func open_note#in_new_window(mods, name, desc) abort
@@ -42,11 +44,13 @@ func open_note#in_new_window(mods, name, desc) abort
 	catch /^Vim\%((\a\+)\)\=:E149:/
 	endtry
 	if could_open
+		doautocmd User OpenedNote
 		return
 	endif
 	let newfile = join([g:open_note#doc_dir, a:name . '.txt'], '/')
 	execute a:mods 'new' newfile
 	call open_note#add_header_tag(a:name, a:desc)
+	doautocmd User OpenedNote
 endfunc
 
 func open_note#add_header_tag(tag, desc = v:null)
