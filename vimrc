@@ -217,7 +217,7 @@ se smartcase              " unless there are any uppercased characters
 se nojoinspaces           " always add a single space when using J
 
 se list listchars=        " Render visible:
-se listchars+=tab:┃\      " - tabs
+se listchars+=tab:│\      " - tabs
 se listchars+=trail:·     " - trailing spaces
 se listchars+=nbsp:¬      " - non-breaking spaces
 
