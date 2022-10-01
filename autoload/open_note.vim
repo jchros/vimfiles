@@ -50,7 +50,7 @@ func open_note#in_new_window(mods, name, desc) abort
 endfunc
 
 func open_note#add_header_tag(tag, desc = v:null)
-	let header = '*;' . a:name . '*'
+	let header = '*;' . a:tag . '*'
 	if !empty(a:desc)
 		let header .= ' ' . a:desc
 	endif
