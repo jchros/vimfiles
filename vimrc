@@ -1,20 +1,6 @@
 " 1,000 thanks to romainl for his "idiomatic vimrc" project.
 " Give it a read: https://github.com/romainl/idiomatic-vimrc#readme
 
-" GUARDS {{{1
-" This vimrc isn't very useful without the +eval and +syntax features
-
-" See `:h no-eval-feature`
-silent! while 0
-    echoerr "Your Vim doesn't have the +eval feature."
-    finish
-silent! endwhile
-
-if !has('syntax')
-    echoerr "Your Vim doesn't have the +syntax feature."
-    finish
-endif
-
 " VIM-PLUG {{{1
 
 " Install vim-plug if you don't have it yet
