@@ -207,6 +207,8 @@ se listchars+=tab:│\      " - tabs
 se listchars+=trail:·     " - trailing spaces
 se listchars+=nbsp:¬      " - non-breaking spaces
 
+se mouse=                 " Disable the mouse
+
 se nomodeline             " Modelines are unsafe; disable them
 
                           " Enable <C-A> and <C-X> for:
@@ -219,7 +221,6 @@ se number                 " the current line number and
 se relativenumber         " the line number relative to the cursor line
                           " See `:h number_relativenumber`
 
-se mouse=                 " Disable the mouse
 
 se scrolloff=3            " There should always be at least 3 lines
                           " above and below the cursor, otherwise scroll
