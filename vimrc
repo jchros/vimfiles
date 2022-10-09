@@ -202,6 +202,8 @@ se smartcase              " unless there are any uppercased characters
 
 se nojoinspaces           " always add a single space when using J
 
+se laststatus=1           " Show status line when there are 2+ windows
+
 se list listchars=        " Render visible:
 se listchars+=tab:│\      " - tabs
 se listchars+=trail:·     " - trailing spaces
@@ -221,6 +223,7 @@ se number                 " the current line number and
 se relativenumber         " the line number relative to the cursor line
                           " See `:h number_relativenumber`
 
+se noruler                " Don't show additonal info in the echo area
 
 se scrolloff=3            " There should always be at least 3 lines
                           " above and below the cursor, otherwise scroll
