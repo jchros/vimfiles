@@ -1,148 +1,8 @@
 " 1,000 thanks to romainl for his "idiomatic vimrc" project.
 " Give it a read: https://github.com/romainl/idiomatic-vimrc#readme
 
-" VIM-PLUG {{{1
-
-" Install vim-plug if you don't have it yet
-" This will only work on Unix machines (BSD, Linux, etc.)
-if has('unix') && !exists('g:NO_INSTALL_PLUG')
-    call kkp#try_to_get_vim_plug()
-endif
-
 let g:vimfiles_dir = expand('<sfile>:p:h')
-let s:vim_plug_folder = g:vimfiles_dir . '/plugged'
-call plug#begin(s:vim_plug_folder)
-
-" Get and update vim-plug's documentation
-Plug 'junegunn/vim-plug'
-
-" Plugins for working with Git {{{2
-Plug 'tpope/vim-fugitive'
-" Git ↑
-" Hub ↓
-Plug 'tpope/vim-rhubarb'
-" Show changes/additions/deletions on the sign column (for git, etc.)
-Plug 'mhinz/vim-signify'
-" Custom text objects {{{2
-
-" Indent objects; useful for Python
-Plug 'michaeljsmith/vim-indent-object'
-
-" THE FOLLOWING PLUGINS RELY ON THIS ONE
-Plug 'kana/vim-textobj-user'
-" Function and class text objects for Python
-Plug 'bps/vim-textobj-python'
-" List element (or function argument) text object; language agnostic
-Plug 'sgur/vim-textobj-parameter'
-
-if executable('nvim')  " {{{2
-let Nvim = has('nvim') ? {} : #{on: []}
-func Nvim(opts)
-    return extend(a:opts, g:Nvim)
-endfunc
-" Auto-completion backend
-Plug 'hrsh7th/nvim-cmp', Nvim
-" TabNine completions
-Plug 'tzachar/cmp-tabnine', Nvim(#{do: './install.sh'})
-" Omnifunc completions
-Plug 'hrsh7th/cmp-omni', Nvim
-" Path completions
-Plug 'hrsh7th/cmp-path', Nvim
-" Buffer completions
-Plug 'hrsh7th/cmp-buffer', Nvim
-" LSP completions
-Plug 'hrsh7th/cmp-nvim-lsp', Nvim
-" Integration of vsnip into cmp
-Plug 'hrsh7th/cmp-vsnip', Nvim
-" Client for Eclipse JDT's LSP
-Plug 'mfussenegger/nvim-jdtls', Nvim
-" A nice colorscheme
-Plug 'rebelot/kanagawa.nvim', Nvim
-" treesitter
-Plug 'nvim-treesitter/nvim-treesitter', Nvim(#{do: ':TSUpdate'})
-" treesitter playground
-Plug 'nvim-treesitter/playground'
-unlet Nvim | delfunc Nvim
-endif " }}}2
-
-let VimOnly = has('nvim') ? #{on: []} : {}
-" Convenient Vim wrappers for Unix commands
-Plug 'tpope/vim-eunuch'
-" Keybindings for manipulating parentheses, braces, HTML/XML tags, etc.
-Plug 'tpope/vim-surround'
-" Aligns text using user defined patterns
-Plug 'godlygeek/tabular'
-" Helps you naviagate to any word in the line using 'f' and 't'
-Plug 'unblevable/quick-scope'
-" Allows to use the dot command for plugins' custom mappings
-Plug 'tpope/vim-repeat'
-
-" A little video game showing off some of Vim's latest features
-Plug 'vim/killersheep', VimOnly
-" Allows you to swap two text objects
-Plug 'jchros/vim-exchange', #{branch: 'persist-hl-status-on-cs-change'}
-" Allows for smooth scrolling
-Plug 'psliwka/vim-smoothie'
-" A plugin to ensure files are well-formatted
-Plug 'editorconfig/editorconfig-vim'
-" Emmet completion for HTML/CSS
-Plug 'mattn/emmet-vim'
-" Integration of linters in Vim
-Plug 'drgarcia1986/python-compilers.vim'
-" A REPL plugin for Common Lisp
-Plug 'vlime/vlime', #{rtp: 'vim/'}
-" Smarter substitutions and easySwitching between letter_casings
-Plug 'tpope/vim-abolish'
-" Automagically balances parentheses in Lisp files
-if executable('cargo')
-    Plug 'eraserhd/parinfer-rust', #{do: 'cargo build --release'}
-else
-    Plug 'bhurlow/vim-parinfer'
-endif
-
-if has('osxdarwin')
-    Plug '~/.vim/plugged/iTunes-current-track'
-endif
-
-" Focus in one section of text by removing the rest
-Plug 'chrisbra/NrrwRgn'
-" Preview substitution patterns
-Plug 'markonm/traces.vim', VimOnly
-" Caps lock for Vim
-Plug 'tpope/vim-capslock'
-" I mostly use this plugin for brace expansion
-Plug 'Olical/vim-expand'
-" Automatically update HTML tags
-Plug 'AndrewRadev/tagalong.vim'
-" Snippet engine
-Plug 'hrsh7th/vim-vsnip'
-
-" A color scheme
-Plug 'srcery-colors/srcery-vim'
-" A colorscheme editor
-Plug 'lifepillar/vim-colortemplate'
-
-" A plugin for automatically adding closing braces, etc.
-Plug 'tmsvg/pear-tree'
-
-unlet VimOnly
-
-" FZF {{{2
-func FZFLocation() abort
-    if !executable('brew')
-        return ''
-    endif
-    let res = systemlist('brew --prefix fzf')[0]
-    return v:shell_error ? '' : res
-endfunc
-
-if !empty(FZFLocation())
-    let &runtimepath .= ',' . FZFLocation()
-else
-    Plug 'junegunn/fzf', #{do: ':call fzf#install()' }
-endif " }}}2
-
-call plug#end()
+call packages#()
 
 " OPTIONS {{{1
 
@@ -274,6 +134,9 @@ se linebreak              " ... but when it's enabled, break
 
 " MISCELLANEOUS {{{1
 
+if has('nvim')
+    packadd kanagawa.nvim
+endif
 execute 'colorscheme' (has('nvim') ? 'kanagawa' : 'srcery')
 
 " Options for emmet-vim {{{2

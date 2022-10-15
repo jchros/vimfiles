@@ -45,6 +45,7 @@ vim.g.jdtls_data_dir = vim.g.jdtls_data_dir or
 	vim.fn.expand(vim.fn.has("win32") ~= 0 and "~/AppData/Local" or "~/.local/share", ":p")
 
 vim.api.nvim_buf_create_user_command(0, "LSPEnable", function(_)
+	vim.cmd.packadd('nvim-jdtls')
 	vim.b.workspace_data_dir = string.format("%s/jdtls/%s",
 		vim.g.jdtls_data_dir,
 		vim.fn.fnamemodify(vim.fn.FugitiveFind(":(top)"), ":t"))

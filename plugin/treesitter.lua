@@ -1,3 +1,6 @@
+vim.cmd.packadd 'nvim-treesitter'
+vim.cmd.packadd 'playground'
+
 require('nvim-treesitter.configs').setup {
 	highlight = { enable = true,
 		additional_vim_regex_highlighting = false,

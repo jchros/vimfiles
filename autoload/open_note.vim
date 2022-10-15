@@ -1,6 +1,6 @@
 let open_note#doc_dir = g:vimfiles_dir . '/doc'
 func s:can_grep_tags() abort
-	return executable('grep') && kkp#file_exists(g:open_note#doc_dir . '/tags')
+	return executable('grep') && !empty(glob(g:open_note#doc_dir . '/tags'))
 endfunc
 
 func open_note#cmd_interface(info) abort

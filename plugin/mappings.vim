@@ -93,9 +93,6 @@ vmap <leader>x <Cmd>call <sid>CtrlXVariable(0)<CR>
 
 nnoremap <leader>h <Cmd>helpclose<CR>
 
-nnoremap vx :Expand<CR>
-xnoremap vx :Expand<CR>
-
 " Line completion
 inoremap <C-L> <C-X><C-L>
 
@@ -154,13 +151,20 @@ else
 	tnoremap  § <Esc>
 endif
 
-" Use evil-exchange's mappings {{{1
+" vim-expand {{{1
+call minpac#add('Olical/vim-expand')
+nnoremap vx :Expand<CR>
+xnoremap vx :Expand<CR>
+
+" vim-exchange {{{1
+call minpac#add('jchros/vim-exchange', #{branch: 'persist-hl-status-on-cs-change'})
 let g:exchange_no_mappings = v:true
 nmap gx  <Plug>(Exchange)
 xmap  X  <Plug>(Exchange)
 nmap gxc <Plug>(ExchangeClear)
 nmap gxx <Plug>(ExchangeLine)
 
-" For vim-vsnip {{{1
+" vim-vsnip {{{1
+call minpac#add('hrsh7th/vim-vsnip')
 imap <expr> <c-f> vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : ''
 smap <expr> <c-f> vsnip#jumpable(1) ? '<Plug>(vsnip-jump-next)' : ''

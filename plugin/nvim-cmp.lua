@@ -1,3 +1,13 @@
+local cmp_plugins = vim.fn.split[[
+	nvim-cmp
+	cmp-buffer
+	cmp-omni
+	cmp-path
+	cmp-vsnip
+	cmp-tabnine
+]]
+for _, plugin in ipairs(cmp_plugins) do vim.cmd.packadd(plugin) end
+
 vim.opt.completeopt = 'menuone,noinsert'
 
 local c = require 'cmp'
