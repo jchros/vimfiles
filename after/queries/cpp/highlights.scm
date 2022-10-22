@@ -1,3 +1,3 @@
 ; extends
-(primitive_type) @primitiveType
+(primitive_type) @type.builtin
 (assignment_expression ["=" "+=" "-=" "*=" "/=" "%=" "<<=" ">>=" "&=" "^=" "|="] @assignment)
