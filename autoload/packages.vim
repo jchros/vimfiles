@@ -62,7 +62,9 @@ func packages#()
 
 	" Color scheme editor
 	call minpac#add('lifepillar/vim-colortemplate', opt)
-	autocmd BufNewFile,BufRead *.colortemplate ++once packadd colortemplate
+	if has('patch-8.0.0')
+		packadd vim-colortemplate
+	endif
 
 	" Integration with EditorConfig
 	call minpac#add('editorconfig/editorconfig-vim')
