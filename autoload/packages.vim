@@ -102,6 +102,11 @@ func packages#()
 		packadd traces.vim
 	endif
 
+	filetype plugin indent on
+	if has('vim_starting') && !exists('g:syntax_on')
+		syn on
+	endif
+
 	" }}}1
 endfunc
 
