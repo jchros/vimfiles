@@ -41,7 +41,7 @@ func packages#()
 
 	" Plugins related to file types {{{1
 
-	" A Vim-equivalent to SLIME (for Commnon Lisp)
+	" A Vim equivalent to SLIME (for Common Lisp)
 	call minpac#add('vlime/vlime', #{rtp: 'vim'})
 
 	" Automagically balance parentheses in Lisp
