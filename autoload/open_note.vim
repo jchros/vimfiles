@@ -16,7 +16,7 @@ func open_note#(name, desc) abort
 		throw 'Note name is missing.'
 	endif
 	if s:can_grep_tags()
-		let tag = systemlist(['grep', '-F', ';' . a:name, g:open_note#doc_dir . '/tags'])
+		let tag = systemlist('grep -F ' . shellescape(';' . a:name) . ' ' . g:open_note#doc_dir . '/tags')
 		if !v:shell_error
 			let [tag, file, pat] = split(tag[0], "\t")
 			let file = join([g:open_note#doc_dir, file], '/')
