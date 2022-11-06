@@ -7,7 +7,7 @@ call packages#()
 " OPTIONS {{{1
 
 let mapleader      = ' '  " 1 space
-let maplocalleader = "\t"
+let maplocalleader = '  ' " 2 spaces
 
 se autoindent
 
