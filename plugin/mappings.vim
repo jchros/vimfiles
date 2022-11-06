@@ -153,8 +153,8 @@ endif
 
 " vim-expand {{{1
 call minpac#add('Olical/vim-expand')
-nnoremap vx :Expand<CR>
-xnoremap vx :Expand<CR>
+nnoremap yx :Expand<CR>
+xnoremap yx :Expand<CR>
 
 " vim-exchange {{{1
 call minpac#add('jchros/vim-exchange', #{branch: 'persist-hl-status-on-cs-change'})
