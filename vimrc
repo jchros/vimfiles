@@ -4,6 +4,13 @@
 let g:vimfiles_dir = expand('<sfile>:p:h')
 call packages#()
 
+let s:fzf_location = systemlist('brew --prefix fzf')[0]
+if !empty(s:fzf_location)
+    let &runtimepath .= ',' . s:fzf_location
+else
+    call minpac#add('junegunn/fzf', { -> fzf#install() })
+endif
+
 " OPTIONS {{{1
 
 let mapleader      = ' '  " 1 space
