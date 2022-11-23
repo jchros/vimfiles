@@ -71,7 +71,7 @@ func packages#()
 
 	" A little game showing off some of Vim 8's features (Vim 8.2+ only)
 	call minpac#add('vim/killersheep', opt)
-	if has('patch-8.1.1705') && has('+textprop')
+	if has('patch-8.1.1705') && has('textprop')
 		packadd killersheep
 	endif
 
