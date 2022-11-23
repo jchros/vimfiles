@@ -151,11 +151,6 @@ else
 	tnoremap  § <Esc>
 endif
 
-" vim-expand {{{1
-call minpac#add('Olical/vim-expand')
-nnoremap yx :Expand<CR>
-xnoremap yx :Expand<CR>
-
 " vim-exchange {{{1
 call minpac#add('jchros/vim-exchange', #{branch: 'persist-hl-status-on-cs-change'})
 let g:exchange_no_mappings = v:true
