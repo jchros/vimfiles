@@ -20,7 +20,7 @@ func packages#()
 		" Language servers {{{2
 		call minpac#add('mfussenegger/nvim-jdtls', opt)
 		" tree-sitter {{{2
-		call minpac#add('nvim-treesitter/nvim-treesitter', s:opt(#{do: 'TSUpdate'}))
+		call minpac#add('nvim-treesitter/nvim-treesitter', s:opt(#{do: {->has('nvim') && execute('TSUpdate')}}))
 		call minpac#add('nvim-treesitter/playground', opt)
 	endif " }}}1
 
