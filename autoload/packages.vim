@@ -10,13 +10,6 @@ func packages#()
 
 	if executable('nvim') " {{{1
 		call minpac#add('rebelot/kanagawa.nvim', opt)
-		" nvim-cmp {{{2
-		call minpac#add('hrsh7th/nvim-cmp', opt)
-		call minpac#add('hrsh7th/cmp-buffer', opt)
-		call minpac#add('hrsh7th/cmp-omni', opt)
-		call minpac#add('hrsh7th/cmp-path', opt)
-		call minpac#add('hrsh7th/cmp-vsnip', opt)
-		call minpac#add('tzachar/cmp-tabnine', s:opt(#{do: {-> system('./install.sh')}}))
 		" Language servers {{{2
 		call minpac#add('mfussenegger/nvim-jdtls', opt)
 		" tree-sitter {{{2
@@ -74,6 +67,9 @@ func packages#()
 	if has('patch-8.1.1705') && has('textprop')
 		packadd killersheep
 	endif
+	
+	" A completion engine for Vim
+	call minpac#add('lifepillar/vim-mucomplete', opt)
 
 	" "Narrow" a region of a file into its own buffer
 	call minpac#add('chrisbra/NrrwRgn')

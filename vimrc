@@ -35,6 +35,13 @@ se belloff=all            " Remove Vim's annoying sounds
 se clipboard=             " Don't use the system clipboard as the
                           " default register
 
+se completeopt=           " Completion options
+se completeopt+=menuone   " Show the popup menu even
+                          " if there's only 1 match
+se completeopt+=preview   " Show extra information in an other window
+se completeopt+=noinsert  " Don't insert anything unless I ask to
+se completeopt+=noselect  " Don't automatically select the first match
+
 se confirm                " Ask for confirmation when deleting an
                           " unsaved buffer
 
