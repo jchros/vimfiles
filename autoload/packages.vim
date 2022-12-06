@@ -22,6 +22,8 @@ func packages#()
 	call minpac#add('kana/vim-textobj-user')
 	call minpac#add('sgur/vim-textobj-parameter')
 
+	call minpac#add('bps/vim-textobj-python')
+
 	" Tim Pope plugins {{{1
 	call minpac#add('tpope/vim-abolish')
 	call minpac#add('tpope/vim-capslock')
