@@ -38,9 +38,9 @@ func packages#()
 	call minpac#add('vlime/vlime', #{rtp: 'vim'})
 
 	" Automagically balance parentheses in Lisp
-	call function('minpac#add', executable('cargo')
+	eval function('minpac#add', executable('cargo')
 		\ ? [ 'eraserhd/parinfer-rust', #{do: {-> system('cargo build --release')}} ]
-		\ : [ 'bhurlow/vim-parinfer' ])
+		\ : [ 'bhurlow/vim-parinfer' ])()
 
 	" Adds ":compiler"s for Python
 	call minpac#add('drgarcia1986/python-compilers.vim')
