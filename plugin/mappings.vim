@@ -111,6 +111,11 @@ nnoremap <expr> S v:count ? 'caw' : 'ciw'
 nnoremap X daw
 nnoremap <BS> X
 
+onoremap ih <Plug>(signify-motion-outer-pending)
+onoremap ah <Plug>(signify-motion-inner-pending)
+xnoremap ih <Plug>(signify-motion-outer-visual)
+xnoremap ah <Plug>(signify-motion-inner-visual)
+
 " Quickly insert a blank line {{{1
 "
 " Add line(s) below the cursor
