@@ -76,7 +76,11 @@ se smartcase              " unless there are any uppercased characters
 
 se nojoinspaces           " always add a single space when using J
 
-se laststatus=1           " Show status line when there are 2+ windows
+if has('nvim')
+    se laststatus=3       " Show only one status line, at the bottom
+else
+    se laststatus=1       " Show status line when there are 2+ windows
+endif
 
 se list listchars=        " Render visible:
 se listchars+=tab:│\      " - tabs
