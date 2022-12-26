@@ -23,9 +23,14 @@ require('nvim-treesitter.configs').setup {
 	playground = { enable = true }
 }
 
+local id = vim.api.nvim_create_augroup("treesitter", {})
+
 -- The <CR> mapping defined above overrides Vim's mapping for
 -- the command-line window, so we need to disable it there.
-vim.api.nvim_create_autocmd('CmdwinEnter', { command = 'silent! nunmap <buffer> <CR>' })
+vim.api.nvim_create_autocmd("CmdwinEnter", {
+	group = "treesitter",
+	command = "silent! nunmap <buffer> <CR>"
+})
 
 vim.cmd.hi{'def', 'link', '@type.builtin', 'Keyword'}
 -- Highlighting assignments is useful in languages where the following is true:
