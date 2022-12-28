@@ -28,7 +28,7 @@ nnoremap <leader>l <Cmd>nohlsearch<cr>
 nnoremap <leader>v <Cmd>tabedit $MYVIMRC<cr>
 
 " Save without staging changes
-nnoremap <leader>w <Cmd>w<cr>
+nnoremap <leader>w <Cmd>update<cr>
 " Save and stage changes
 nnoremap <leader>W <Cmd>Gw<cr>
 
