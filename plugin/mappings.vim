@@ -116,6 +116,9 @@ onoremap ah <Plug>(signify-motion-inner-pending)
 xnoremap ih <Plug>(signify-motion-outer-visual)
 xnoremap ah <Plug>(signify-motion-inner-visual)
 
+" Quickly open a temporary file
+nnoremap <leader>p :new<c-r>=tempname()<cr>
+
 " Quickly insert a blank line {{{1
 "
 " Add line(s) below the cursor
