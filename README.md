@@ -7,7 +7,7 @@ very permissive license of this repository (0BSD) was chosen to
 encourage this.
 However, you should probably not clone this repository in your machine;
 it's very rewarding to build your Vim configuration yourself! My vimrc
-does stuff you may not want to do (e.g. automatically install vim-plug).
+does stuff you may not want to do (e.g. automatically install minpac).
 
 ## Micro-plugins
 
