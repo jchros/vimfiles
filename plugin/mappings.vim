@@ -21,9 +21,6 @@ endfunction
 " Clear search highlighting
 nnoremap <leader>l <Cmd>nohlsearch<cr>
 
-" Quickly edit your .vimrc
-nnoremap <leader>v <Cmd>tabedit $MYVIMRC<cr>
-
 " Save without staging changes
 nnoremap <leader>w <Cmd>update<cr>
 " Save and stage changes
