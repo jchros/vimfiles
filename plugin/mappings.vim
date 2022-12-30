@@ -18,9 +18,6 @@ function s:Map(lhs, rhs, ...) abort
 	endif
 endfunction
 
-" A Magit-inspired mapping; useful for making commits
-nnoremap <C-C><C-C> <Cmd>xit<cr>
-
 " Clear search highlighting
 nnoremap <leader>l <Cmd>nohlsearch<cr>
 
