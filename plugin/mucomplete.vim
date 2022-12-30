@@ -7,6 +7,7 @@ let g:mucomplete#chains = {}
 let g:mucomplete#chains.default =<< trim END
 	path
 	user
+	vsnip
 	omni
 	c-n
 	dict

@@ -169,5 +169,6 @@ nmap gxx <Plug>(ExchangeLine)
 
 " vim-vsnip {{{1
 call minpac#add('hrsh7th/vim-vsnip')
+call minpac#add('hrsh7th/vim-vsnip-integ')
 imap <expr> <c-f> vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : ''
 smap <expr> <c-f> vsnip#jumpable(1) ? '<Plug>(vsnip-jump-next)' : ''
