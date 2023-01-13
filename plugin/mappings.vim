@@ -101,7 +101,7 @@ augroup mappings
 	au BufRead,BufNewFile grammar.js nnoremap <buffer> gd /^\s\+\zs<C-R><C-W>\ze:\\|function\_s\+\zs<C-R><C-W>\ze(\\|\<lt>externals:\_s*(\_s*\$\_s*)\_s*=>\_s*\[\%(\_[^\]]\\|\/\/.*$\)\{-\}\$\.\zs<C-R><C-W>\ze\_s*,<CR>
 augroup END
 
-nnoremap <expr> S v:count ? 'caw' : 'ciw'
+nnoremap <expr> S '<c-\><c-n>"' .. v:register .. ((v:count1 * 2) - 1) .. 'ciw'
 nnoremap X daw
 nnoremap <BS> X
 
