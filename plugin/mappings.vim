@@ -111,7 +111,7 @@ xnoremap ih <Plug>(signify-motion-outer-visual)
 xnoremap ah <Plug>(signify-motion-inner-visual)
 
 " Quickly open a temporary file
-nnoremap <leader>t :new<c-r>=tempname()<cr>
+nnoremap <leader>t :new <c-r>=tempname()<cr>
 
 " Cut, copy and paste to system clipboard
 nnoremap <leader>Y <cmd>%yank+<cr>
