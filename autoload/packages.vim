@@ -34,6 +34,7 @@ func packages#()
 	call minpac#add('tpope/vim-rhubarb')
 	call minpac#add('tpope/vim-surround')
 	call minpac#add('tpope/vim-vinegar')
+	autocmd VimEnter * ++once nunmap -
 	call minpac#add('tpope/vim-dadbod')
 
 	" Plugins related to file types {{{1
