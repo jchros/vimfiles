@@ -65,7 +65,10 @@ func packages#()
 	endif
 
 	" Integration with EditorConfig
-	call minpac#add('editorconfig/editorconfig-vim')
+	call minpac#add('editorconfig/editorconfig-vim', opt)
+	if !has('nvim-0.9')
+		packadd editorconfig-vim
+	endif
 
 	" A little game showing off some of Vim 8's features (Vim 8.2+ only)
 	call minpac#add('vim/killersheep', opt)
