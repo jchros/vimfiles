@@ -11,10 +11,9 @@ func expand#op(type = '') abort
 endfunc
 
 nnoremap <expr> <Plug>(Expand) expand#op()
-nnoremap <Plug>(ExpandLine) :Expand<cr>
 xnoremap <Plug>(Expand) :Expand<cr>
 
 nmap yx <Plug>(Expand)
-nmap yxx <Plug>(ExpandLine)
-nmap yxyx <Plug>(ExpandLine)
+nmap yxx yx_
+nmap yxyx yx_
 xmap yx <Plug>(Expand)
