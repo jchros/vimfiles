@@ -40,12 +40,12 @@ function! IndentSpaces(indent_width = 0, global = v:false) abort
 	endif
 endfunction
 
-command! -bang -bar -nargs=? IndentTabs
-\	call IndentTabs(<q-args> ? <q-args> : v:null, <bang>0)
-command! -bang -bar -nargs=? IndentSpaces
-\	call IndentSpaces(<q-args> ? <q-args> : v:null, <bang>0)
-command! -bang -bar -nargs=? TIndent IndentTabs<bang>   <args>
-command! -bang -bar -nargs=? SIndent IndentSpaces<bang> <args>
+command! -bang -bar -count IndentTabs
+\	call IndentTabs(<count> ? <count> : v:null, <bang>0)
+command! -bang -bar -count IndentSpaces
+\	call IndentSpaces(<count> ? <count> : v:null, <bang>0)
+command! -bang -bar -count TIndent <count>IndentTabs<bang>
+command! -bang -bar -count SIndent <count>IndentSpaces<bang>
 
 nnoremap <Plug>(indent-space)
 \	<Cmd>call LocalIndentSpaces(v:count)<CR>
