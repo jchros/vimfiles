@@ -25,6 +25,11 @@ own GitHub repositories:
 - [`ctrl_e.vim`](plugin/ctrl_e.vim): Adds an insert mode mapping (bound
   to `CTRL_E`) which jumps to the end of the current line and closes
   brackets and quoted strings.
+- [`repeat.vim`](plugin/repeat.vim): A bunch of mappings I added to use
+  the fact that there is no text object named `r`: `cr` makes a
+  **c**aracter **r**epeat, `dr` makes a **d**elete then a **r**epeat,
+  and `yr` makes a **y**ank then a **r**epeat (although these commands
+  leave registers unchanged).
 
 These are also licensed under the [0BSD license](LICENSE).
 
