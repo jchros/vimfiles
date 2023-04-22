@@ -17,7 +17,7 @@ own GitHub repositories:
 - [`timecalc.vim`](plugin/timecalc.vim): two functions and an Ex
   command for calculating the sum of a list of durations; see [the
   documentation](doc/timecalc.txt).
-- [`IndentSettings.vim`](plugin/IndentSettings.vim): Ex commands to
+- [`indent_settings.vim`](plugin/indent_settings.vim): Ex commands to
   quickly change the values of `'expandtab'`, `'tabstop'`,
   `'softtabstop'`, and `'shiftwidth'`.
 - [`cmus.vim`](plugin/cmus.vim): Ex commands and mappings to control
