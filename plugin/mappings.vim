@@ -121,6 +121,7 @@ nnoremap <leader>p "+p
 xnoremap <leader>d "+d
 xnoremap <leader>y "+y
 xnoremap <leader>p "+p
+xnoremap <leader>P "+P
 
 " Quickly insert a blank line {{{1
 "
