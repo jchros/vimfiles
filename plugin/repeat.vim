@@ -1,6 +1,3 @@
-" Character Repeat
-nnoremap cr a<c-r>=getline('.')[getpos('.')[2]-2]<cr><esc><cmd>call repeat#set('cr')<cr>
-
 " Delete Repeat (a.k.a swap)
 func! DRepeat() abort
 	let [i, j] = [line('.'), line('.') + v:count1 - 1]

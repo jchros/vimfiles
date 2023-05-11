@@ -23,10 +23,9 @@ own GitHub repositories:
   quickly change the values of `'expandtab'`, `'tabstop'`,
   `'softtabstop'`, and `'shiftwidth'`.
 - [`repeat.vim`](plugin/repeat.vim): A bunch of mappings I added to use
-  the fact that there is no text object named `r`: `cr` makes a
-  **c**aracter **r**epeat, `dr` makes a **d**elete then a **r**epeat,
-  and `yr` makes a **y**ank then a **r**epeat (although these commands
-  leave registers unchanged).
+  the fact that there is no text object named `r`: `dr` makes a
+  **d**elete then a **r**epeat, and `yr` makes a **y**ank then a
+  **r**epeat (both commands leave registers unchanged).
 - [`timecalc.vim`](plugin/timecalc.vim): two functions and an Ex
   command for calculating the sum of a list of durations; see [the
   documentation](doc/timecalc.txt).
