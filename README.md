@@ -14,22 +14,22 @@ does stuff you may not want to do (e.g. automatically install minpac).
 Here are some plugins I wrote that aren't big enough to deserve their
 own GitHub repositories:
 
-- [`timecalc.vim`](plugin/timecalc.vim): two functions and an Ex
-  command for calculating the sum of a list of durations; see [the
-  documentation](doc/timecalc.txt).
-- [`indent_settings.vim`](plugin/indent_settings.vim): Ex commands to
-  quickly change the values of `'expandtab'`, `'tabstop'`,
-  `'softtabstop'`, and `'shiftwidth'`.
 - [`cmus.vim`](plugin/cmus.vim): Ex commands and mappings to control
   cmus.
 - [`ctrl_e.vim`](plugin/ctrl_e.vim): Adds an insert mode mapping (bound
   to `CTRL_E`) which jumps to the end of the current line and closes
   brackets and quoted strings.
+- [`indent_settings.vim`](plugin/indent_settings.vim): Ex commands to
+  quickly change the values of `'expandtab'`, `'tabstop'`,
+  `'softtabstop'`, and `'shiftwidth'`.
 - [`repeat.vim`](plugin/repeat.vim): A bunch of mappings I added to use
   the fact that there is no text object named `r`: `cr` makes a
   **c**aracter **r**epeat, `dr` makes a **d**elete then a **r**epeat,
   and `yr` makes a **y**ank then a **r**epeat (although these commands
   leave registers unchanged).
+- [`timecalc.vim`](plugin/timecalc.vim): two functions and an Ex
+  command for calculating the sum of a list of durations; see [the
+  documentation](doc/timecalc.txt).
 
 These are also licensed under the [0BSD license](LICENSE).
 
