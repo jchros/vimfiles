@@ -101,13 +101,7 @@ augroup mappings
 	au BufRead,BufNewFile grammar.js nnoremap <buffer> gd /^\s\+\zs<C-R><C-W>\ze:\\|function\_s\+\zs<C-R><C-W>\ze(\\|\<lt>externals:\_s*(\_s*\$\_s*)\_s*=>\_s*\[\%(\_[^\]]\\|\/\/.*$\)\{-\}\$\.\zs<C-R><C-W>\ze\_s*,<CR>
 augroup END
 
-" Ensures we stay in normal mode for the remaining commands (useful when
-" called from i_CTRL-O)
-func s:ensure_normal() abort
-	return empty(getcmdwintype()) ? '<c-\><c-n>' : mode(1) =~# '^ni' ? ':<c-u><cr><esc>' : ':<c-u><cr>'
-endfunc
-
-nnoremap <expr> S s:ensure_normal() .. '"' .. v:register .. ((v:count1 * 2) - 1) .. 'ciw'
+nnoremap <expr> S (empty(getcmdwintype()) ? "\<c-\>\<c-n>" : mode(1) =~# '^ni' ? ":\<c-u>\<cr>\<esc>" : ":\<c-u>\<cr>") .. '"' .. v:register .. ((v:count1 * 2) - 1) .. 'ciw'
 nnoremap X daw
 nnoremap <BS> X
 
