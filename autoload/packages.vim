@@ -15,7 +15,6 @@ func packages#()
 		" tree-sitter {{{2
 		call minpac#add('nvim-treesitter/nvim-treesitter', s:opt(#{do: {->has('nvim') && execute('TSUpdate')}}))
 		call minpac#add('nvim-treesitter/playground', opt)
-		call minpac#add('p00f/nvim-ts-rainbow', opt)
 	endif " }}}1
 
 	" Text object plugins {{{1
