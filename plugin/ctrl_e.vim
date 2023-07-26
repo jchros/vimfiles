@@ -28,4 +28,4 @@ fun s:unmatched(...) abort
 	return get(context, 0, ";\<c-g>u")
 endfun
 
-inoremap <expr> <c-e> getcurpos()[2] == col('$') ? <sid>unmatched() : '<c-o>$'
+inoremap <expr> <c-e> getcurpos()[2] == col('$') ? <sid>unmatched() : '<end>'
