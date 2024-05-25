@@ -34,6 +34,9 @@ nnoremap <leader>G <Cmd>vert G<cr>
 " Remove other windows of current tab
 nnoremap <leader>o <C-W>o
 
+" Close a window
+call s:Map('<leader>q', '<c-w>c')
+
 " Quick buffer navigation {{{1
 " Read https://stackoverflow.com/a/24903110
 call s:Map('gb', ':ls<cr>:b', 'nore')
