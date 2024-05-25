@@ -9,7 +9,6 @@ func packages#()
 	call minpac#add('k-takata/minpac', opt)
 
 	if executable('nvim') " {{{1
-		call minpac#add('rebelot/kanagawa.nvim', opt)
 		" Language servers {{{2
 		call minpac#add('mfussenegger/nvim-jdtls', opt)
 		" tree-sitter {{{2

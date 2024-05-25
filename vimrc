@@ -152,10 +152,9 @@ se linebreak              " ... but when it's enabled, break
 
 " MISCELLANEOUS {{{1
 
-if has('nvim')
-    packadd kanagawa.nvim
+if !has('nvim')
+    colorscheme srcery
 endif
-execute 'colorscheme' (has('nvim') ? 'kanagawa' : 'srcery')
 
 " Options for emmet-vim {{{2
 let g:user_emmet_install_global = 0
