@@ -126,6 +126,12 @@ xnoremap <leader>y "+y
 xnoremap <leader>p "+p
 xnoremap <leader>P "+P
 
+" Jump multiple lines forward
+nnoremap <c-j> 6j
+xnoremap <c-j> 6j
+nnoremap <c-k> 6k
+xnoremap <c-k> 6k
+
 " Quickly insert a blank line {{{1
 "
 " Add line(s) below the cursor
