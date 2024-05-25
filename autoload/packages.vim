@@ -9,8 +9,6 @@ func packages#()
 	call minpac#add('k-takata/minpac', opt)
 
 	if executable('nvim') " {{{1
-		" Language servers {{{2
-		call minpac#add('mfussenegger/nvim-jdtls', opt)
 		" tree-sitter {{{2
 		call minpac#add('nvim-treesitter/nvim-treesitter', s:opt(#{do: {->has('nvim') && execute('TSUpdate')}}))
 		call minpac#add('nvim-treesitter/playground', opt)
