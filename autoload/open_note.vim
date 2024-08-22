@@ -44,6 +44,7 @@ func! open_note#in_new_window(mods, name, desc) abort
 	catch /^Vim\%((\a\+)\)\=:E149:/
 	endtry
 	if could_open
+		autocmd ModifiedSet <buffer> ++once set buftype=
 		silent! doautocmd User OpenedNote
 		return
 	endif
