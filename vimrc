@@ -247,7 +247,7 @@ let g:vsnip_snippet_dir = g:vimfiles_dir . '/snippets'
 " Remove Vim's weird "double-indent in parens" on Python files
 let g:pyindent_disable_parentheses_indenting = 1
 
-command -nargs=+ -bar -bang -complete=custom,open_note#complete
+command -nargs=+ -bar -bang -complete=customlist,open_note#complete
 \   OpenNote call open_note#cmd_interface(#{
 \       bang: <bang>0,
 \       mods: '<mods>',

@@ -62,9 +62,13 @@ func! open_note#add_header_tag(tag, desc = v:null)
 endfunc
 
 func! open_note#complete(arg_lead, cmd_line, cursor_pos) abort
-	if !s:can_grep_tags()
-		return ''
+	const [cmd_name, cmd_name_start, arg_begin] = matchstrpos(a:cmd_line, '\vO%[penNote]!?\s*;?')
+	if a:cursor_pos < arg_begin
+		return []
 	endif
-	let res = systemlist("grep --only-matching '^;[^\t]*' " . shellescape(g:open_note#doc_dir . '/tags'))
-	return join(map(res, 'v:val[1:]'), "\n")
+	const [tag, tag_begin, tag_end] = matchstrpos(a:cmd_line, '[#-)!+-~]\+', arg_begin)
+	if a:cursor_pos > tag_end
+		return []
+	endif
+	return getcompletion(';' .. tag, 'help')->map({k, v -> v[1:]})
 endfunc
