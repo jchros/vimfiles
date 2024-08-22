@@ -226,6 +226,7 @@ if !exists(":DiffOrig")
   command DiffOrig
   \  vert new
   \| set bt=nofile
+  \| let &syntax = getbufvar('#', '&filetype')
   \| r ++edit #
   \| 0d_
   \| diffthis
