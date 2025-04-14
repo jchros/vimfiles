@@ -105,10 +105,9 @@ func packages#()
 		packadd traces.vim
 	endif
 
-	" Install telescope.nvim
+	" Load plenary.nvim for Neovim plugins that depend on it
 	if has('nvim')
 		packadd plenary.nvim
-		packadd telescope.nvim
 	endif
 
 	filetype plugin indent on
