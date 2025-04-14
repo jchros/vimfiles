@@ -12,6 +12,9 @@ func packages#()
 		" tree-sitter {{{2
 		call minpac#add('nvim-treesitter/nvim-treesitter', s:opt(#{do: {->has('nvim') && execute('TSUpdate')}}))
 		call minpac#add('nvim-treesitter/playground', opt)
+		" telescope {{{2
+		call minpac#add('nvim-lua/plenary.nvim', opt)
+		call minpac#add('nvim-telescope/telescope.nvim', opt)
 	endif " }}}1
 
 	" Text object plugins {{{1
@@ -100,6 +103,12 @@ func packages#()
 	call minpac#add('markonm/traces.vim', opt)
 	if !has('nvim')
 		packadd traces.vim
+	endif
+
+	" Install telescope.nvim
+	if has('nvim')
+		packadd plenary.nvim
+		packadd telescope.nvim
 	endif
 
 	filetype plugin indent on
