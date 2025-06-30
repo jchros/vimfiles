@@ -216,6 +216,10 @@ command -bar SynStack call <SID>ynstack()
 
 let g:traces_abolish_integration = 1
 
+if has('nvim')
+    iunmap <c-s>
+endif
+
 " The following command is taken from Vim's default vimrc (for files
 " which have no VIMRC) and is thus licensed under Vim's license.
 " Convenient command to see the difference between the current buffer and the
