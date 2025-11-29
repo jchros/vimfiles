@@ -157,11 +157,6 @@ endif
 
 " vim-exchange {{{1
 call minpac#add('jchros/vim-exchange', #{branch: 'persist-hl-status-on-cs-change'})
-let g:exchange_no_mappings = v:true
-nmap gx  <Plug>(Exchange)
-xmap  X  <Plug>(Exchange)
-nmap gxc <Plug>(ExchangeClear)
-nmap gxx <Plug>(ExchangeLine)
 
 " vim-vsnip {{{1
 call minpac#add('hrsh7th/vim-vsnip')
