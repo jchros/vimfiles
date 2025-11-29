@@ -138,6 +138,9 @@ nnoremap <down> <c-w>j
 nnoremap <up> <c-w>k
 nnoremap <right> <c-w>l
 
+inoreabbrev <expr> date/ strftime('%d/%m/%Y')
+inoreabbrev <expr> date- strftime('%Y-%m-%d')
+
 if !empty($AZERTY) " {{{1
 	" Toggle casing of a single character
 	noremap ç ~
