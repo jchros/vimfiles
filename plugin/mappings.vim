@@ -50,7 +50,7 @@ call s:Map('<leader>B', ':ls<cr>:sbuffer<Space>', 'nore')
 
 " Quick tab navigation {{{1
 " Make it easier to switch tabs
-call s:Map('gr', 'gT')
+call s:Map('<nowait> gr', 'gT')
 
 " Quickly close tabs
 call s:Map('<leader>x', '<Cmd>tabclose<cr>')
