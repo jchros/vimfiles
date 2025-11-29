@@ -132,6 +132,12 @@ xnoremap <c-j> 6j
 nnoremap <c-k> 6k
 xnoremap <c-k> 6k
 
+" Easily navigate windows
+nnoremap <left> <c-w>h
+nnoremap <down> <c-w>j
+nnoremap <up> <c-w>k
+nnoremap <right> <c-w>l
+
 " Quickly insert a blank line {{{1
 "
 " Add line(s) below the cursor
