@@ -138,29 +138,6 @@ nnoremap <down> <c-w>j
 nnoremap <up> <c-w>k
 nnoremap <right> <c-w>l
 
-" Quickly insert a blank line {{{1
-"
-" Add line(s) below the cursor
-" Why not simply do "nnoremap § o<Esc>kgM" ?
-" When given a count, this mapping translates to "<count>o<Esc>kgM".
-" This adds <count> blank lines below the cursor with the "o" command
-" (which also moves the cursor to the last line added), then moves the
-" cursor up 1 line. Thus, the cursor will always be moved
-" count - 1 lines below the line from which the mapping is called.
-" This version of the mapping adds a count to the "k" in order to move
-" the cursor up by just as many lines as were added by "o".
-nnoremap <expr> § 'o<Esc>' . v:count1 . 'kgM'
-
-" Add line(s) above the cursor
-" We don't need to do the same thing as above for these mappings;
-" since the last line added by "O" always ends up above the
-" current line, we only need to move the cursor down once.
-if !empty($AZERTY)
-	nnoremap ¶ O<Esc>jgM
-else
-	nnoremap ± O<Esc>jgM
-endif
-
 if !empty($AZERTY) " {{{1
 	" Toggle casing of a single character
 	noremap ç ~
