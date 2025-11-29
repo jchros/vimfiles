@@ -182,9 +182,6 @@ let g:lisp_rainbow = v:true
 " Browse man pages without exiting Vim (see :help :Man)
 runtime ftplugin/man.vim
 
-" Allow modifying and writing to a protected file
-command -bar -bang Writeable set modifiable noreadonly
-
 command -bar -nargs=? -complete=dir Tex Texplore <args>
 command -bar -nargs=? -complete=dir Ex Explore <args>
 
